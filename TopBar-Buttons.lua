@@ -11,7 +11,7 @@ Window:CreateTopbarButton("dex", "keyboard", function()
 end, 990)
 
 Window:CreateTopbarButton("starbutton1", "star", function() 
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/qShadow14/Emotes/refs/heads/main/emotes.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/qShadow14/All-In-One/refs/heads/main/Emotes.lua"))()
 end, 990)
 
 Window:CreateTopbarButton("Items", "syringe", function() 
