@@ -1,18 +1,3 @@
---[[
-$$$$$$$$\  $$$$$$\   $$$$$$\   $$$$$$\  $$$$$$\ $$$$$$$$\ $$$$$$$$\ $$\     $$\ 
-$$  _____|$$  __$$\ $$  __$$\ $$  __$$\ \_$$  _|$$  _____|\_$$  ___|\_$$\   $$  |
-$$ |      $$ /  \__|$$ /  $$ |$$ /  \__|  $$ |  $$ |        $$ |      \_$$\ $$  / 
-$$$$$\    \$$$$$$\  $$ |  $$ |$$ |        $$ |  $$$$$\      $$ |        \$$$$  /  
-$$  __|    \____$$\ $$ |  $$ |$$ |        $$ |  $$  __|     $$ |         \$$  /   
-$$ |      $$\   $$ |$$ |  $$ |$$ |  $$\   $$ |  $$ |        $$ |          $$ |    
-$$ |      \$$$$$$  | $$$$$$  |\$$$$$$  |$$$$$$\ $$$$$$$$\   $$ |          $$ |    
-\__|       \______/  \______/  \______/ \______|\________|  \__|          \__|    
-]]
-
--- Load the key system
-local KeySystem = loadstring(game:HttpGet("https://raw.githubusercontent.com/qShadow14/All-In-One/refs/heads/main/BirdBall-FSociety-loading-screen.lua"))()
-wait(9)
-
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 -- ============================================
