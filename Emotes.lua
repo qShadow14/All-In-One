@@ -1,13 +1,15 @@
 --[[ 
     Source script taken from: https://github.com/Roblox/creator-docs/blob/main/content/en-us/characters/emotes.md
 
-    scriptblox: https://scriptblox.com/script/Universal-Script-qShadow-I-Emote-Script-48024
+    scriptblox: https://scriptblox.com/script/Universal-Script-7yd7-I-Emote-Script-48024
+    
+    FIXED VERSION: Corrected pagination logic to display correct number of pages
 ]]
 
 
 if _G.EmotesGUIRunning then
     getgenv().Notify({
-        Title = 'qShadow | Emote',
+        Title = '7yd7 | Emote',
         Content = '⚠️ It works It actually works',
         Duration = 5
     })
@@ -21,7 +23,7 @@ pcall(function()
 end)
 
 getgenv().Notify({
-    Title = 'qShadow | Emote',
+    Title = '7yd7 | Emote',
     Content = '⚠️ Script loading...',
     Duration = 5
 })
@@ -54,8 +56,6 @@ getgenv().autoReloadEnabled = getgenv().autoReloadEnabled or false
 local lastRadialActionTime = 0
 local lastWheelVisibleTime = 0
 
--- Store button connections to prevent duplicates
-local buttonConnections = {}
 
 RunService.Heartbeat:Connect(function()
     local success, menu = pcall(function() return CoreGui.RobloxGui.EmotesMenu.Children end)
@@ -585,49 +585,17 @@ local function updateEmotes()
     end)
 end
 
+-- FIXED FUNCTION: Simplified pagination calculation
 local function calculateTotalPages()
-      if currentMode == "animation" then
-        local favoritesToUse = _G.filteredFavoritesAnimationsForDisplay or favoriteAnimations
-        local hasFavorites = #favoritesToUse > 0
-        local normalAnimationsCount = 0
-
-        for _, animation in pairs(filteredAnimations) do
-            if not isInFavorites(animation.id) then
-                normalAnimationsCount = normalAnimationsCount + 1
-            end
-        end
-
-        local pages = 0
-        if hasFavorites then
-            pages = pages + math.ceil(#favoritesToUse / itemsPerPage)
-        end
-        if normalAnimationsCount > 0 then
-            pages = pages + math.ceil(normalAnimationsCount / itemsPerPage)
-        end
-        return math.max(pages, 1)
+    if currentMode == "animation" then
+        -- Simply count all filtered animations
+        local totalCount = #filteredAnimations
+        return math.max(math.ceil(totalCount / itemsPerPage), 1)
     end
     
-    local favoritesToUse = _G.filteredFavoritesForDisplay or favoriteEmotes
-    local hasFavorites = #favoritesToUse > 0
-    local normalEmotesCount = 0
-
-    for _, emote in pairs(filteredEmotes) do
-        if not isInFavorites(emote.id) then
-            normalEmotesCount = normalEmotesCount + 1
-        end
-    end
-
-    local pages = 0
-
-    if hasFavorites then
-        pages = pages + math.ceil(#favoritesToUse / itemsPerPage)
-    end
-
-    if normalEmotesCount > 0 then
-        pages = pages + math.ceil(normalEmotesCount / itemsPerPage)
-    end
-
-    return math.max(pages, 1)
+    -- Simply count all filtered emotes
+    local totalCount = #filteredEmotes
+    return math.max(math.ceil(totalCount / itemsPerPage), 1)
 end
 
 local function isGivenAnimation(animationHolder, animationId)
@@ -954,7 +922,7 @@ local function toggleFavorite(emoteId, emoteName)
     if found then
         table.remove(favoriteEmotes, index)
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '🗑️ Removed "' .. emoteName .. '" from favorites',
             Duration = 3
         })
@@ -964,7 +932,7 @@ local function toggleFavorite(emoteId, emoteName)
             name = emoteName .. " - ⭐"
         })
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '✅ Added "' .. emoteName .. '" to favorites',
             Duration = 3
         })
@@ -995,7 +963,7 @@ local function toggleFavoriteAnimation(animationData)
     if found then
         table.remove(favoriteAnimations, index)
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '🗑️ Removed "' .. animationData.name .. '" from favorites',
             Duration = 3
         })
@@ -1006,7 +974,7 @@ local function toggleFavoriteAnimation(animationData)
             bundledItems = animationData.bundledItems
         })
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '✅ Added "' .. animationData.name .. '" to favorites',
             Duration = 3
         })
@@ -1079,7 +1047,7 @@ local function applyAnimation(animationData)
     
     if not animate or not humanoid then
         getgenv().Notify({
-            Title = 'qShadow | Animation Error',
+            Title = '7yd7 | Animation Error',
             Content = '❌ Animate or Humanoid not found',
             Duration = 3
         })
@@ -1093,7 +1061,7 @@ local function applyAnimation(animationData)
     
     if not bundledItems then
         getgenv().Notify({
-            Title = 'qShadow | Animation Error', 
+            Title = '7yd7 | Animation Error', 
             Content = '❌ No bundled items found',
             Duration = 3
         })
@@ -1376,7 +1344,7 @@ local function fetchAllEmotes()
     updateEmotes()
     
     getgenv().Notify({
-        Title = 'qShadow | Emote',
+        Title = '7yd7 | Emote',
         Content = "🎉 Loaded Successfully! Total Emotes: " .. totalEmotesLoaded,
         Duration = 5
     })
@@ -1423,7 +1391,7 @@ end
 local function searchEmotes(searchTerm)
     if isLoading then
         getgenv().Notify({
-            Title = 'qShadow | Emote',
+            Title = '7yd7 | Emote',
             Content = '⚠️ Loading please wait...',
             Duration = 5
         })
@@ -1502,7 +1470,7 @@ end
 local function searchAnimations(searchTerm)
     if isLoading then
         getgenv().Notify({
-            Title = 'qShadow | Animation',
+            Title = '7yd7 | Animation',
             Content = '⚠️ Loading please wait...',
             Duration = 5
         })
@@ -1642,7 +1610,7 @@ local function onCharacterAdded(character)
     task.wait(.3)
     applyAnimation(getgenv().lastPlayedAnimation)
     getgenv().Notify({
-        Title = 'qShadow | Auto Reload Animation',
+        Title = '7yd7 | Auto Reload Animation',
         Content = '🔄 The last animation was automatically \n reapplied',
         Duration = 3
     })
@@ -1712,7 +1680,7 @@ local function toggleEmoteWalk()
 
     if emotesWalkEnabled then
         getgenv().Notify({
-            Title = 'qShadow | Emote Freeze',
+            Title = '7yd7 | Emote Freeze',
             Content = "🔒 Emote freeze ON",
             Duration = 5
         })
@@ -1725,7 +1693,7 @@ local function toggleEmoteWalk()
         end
     else
         getgenv().Notify({
-            Title = 'qShadow | Emote Freeze',
+            Title = '7yd7 | Emote Freeze',
             Content = '🔓 Emote freeze OFF',
             Duration = 5
         })
@@ -1749,7 +1717,7 @@ local function toggleSpeedEmote()
 
     if speedEmoteEnabled then
         getgenv().Notify({
-            Title = 'qShadow | Speed Emote',
+            Title = '7yd7 | Speed Emote',
             Content = "⚡ Speed Emote ON",
             Duration = 5
         })
@@ -1757,7 +1725,7 @@ local function toggleSpeedEmote()
         stopCurrentEmote()
     else
         getgenv().Notify({
-            Title = 'qShadow | Speed Emote',
+            Title = '7yd7 | Speed Emote',
             Content = '⚡ Speed Emote OFF',
             Duration = 5
         })
@@ -1779,7 +1747,7 @@ local function toggleFavoriteMode()
     if favoriteEnabled then
         Favorite.Image = "rbxassetid://97307461910825"
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = "🔒 Favorite ON",
             Duration = 5
         })
@@ -1792,7 +1760,7 @@ local function toggleFavoriteMode()
     else
         Favorite.Image = "rbxassetid://124025954365505"
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '🔓 Favorite OFF',
             Duration = 3
         })
@@ -1842,58 +1810,37 @@ local function toggleAutoReload()
     
     if getgenv().autoReloadEnabled then
         getgenv().Notify({
-            Title = 'qShadow | Auto Reload Animation',
+            Title = '7yd7 | Auto Reload Animation',
             Content = "🔄 Auto Reload ON",
             Duration = 5
         })
     else
         getgenv().Notify({
-            Title = 'qShadow | Auto Reload Animation',
+            Title = '7yd7 | Auto Reload Animation',
             Content = '🔄 Auto Reload OFF',
             Duration = 3
         })
     end
 end
 
--- FIXED: Disconnect old connections before creating new ones
-local function disconnectButton(button)
-    if button and button.Parent then
-        pcall(function()
-            for _, connection in pairs(getconnections(button.MouseButton1Click)) do
-                connection:Disable()
-            end
-        end)
-    end
-end
+local eventsConnected = false
 
 function connectEvents()
-    -- Disconnect all existing connections first to prevent double-firing
-    for buttonName, connection in pairs(buttonConnections) do
-        if connection then
-            connection:Disconnect()
-            buttonConnections[buttonName] = nil
-        end
-    end
+    if eventsConnected then return end
+    eventsConnected = true
 
+    -- Navigare pagini
     if _1left then
-        disconnectButton(_1left)
-        buttonConnections["_1left"] = _1left.MouseButton1Click:Connect(function()
-            safeButtonClick("PreviousPage", previousPage)
-        end)
+        _1left.MouseButton1Click:Connect(previousPage)
     end
 
     if _9right then
-        disconnectButton(_9right)
-        buttonConnections["_9right"] = _9right.MouseButton1Click:Connect(function()
-            safeButtonClick("NextPage", nextPage)
-        end)
+        _9right.MouseButton1Click:Connect(nextPage)
     end
 
-      if _2Routenumber then
-        if buttonConnections["_2Routenumber"] then
-            buttonConnections["_2Routenumber"]:Disconnect()
-        end
-        buttonConnections["_2Routenumber"] = _2Routenumber.FocusLost:Connect(function(enterPressed)
+    -- Input număr pagină
+    if _2Routenumber then
+        _2Routenumber.FocusLost:Connect(function(enterPressed)
             local pageNum = tonumber(_2Routenumber.Text)
             if pageNum then
                 goToPage(pageNum)
@@ -1903,11 +1850,9 @@ function connectEvents()
         end)
     end
 
+    -- Căutare emote / animație
     if Search then
-        if buttonConnections["Search"] then
-            buttonConnections["Search"]:Disconnect()
-        end
-        buttonConnections["Search"] = Search.Changed:Connect(function(property)
+        Search.Changed:Connect(function(property)
             if property == "Text" then
                 if currentMode == "emote" then
                     emoteSearchTerm = Search.Text
@@ -1923,11 +1868,7 @@ function connectEvents()
     local SECTOR_COUNT = 8
     local SECTOR_ANGLE = 360 / SECTOR_COUNT
 
-    if buttonConnections["UserInput"] then
-        buttonConnections["UserInput"]:Disconnect()
-    end
-    
-    buttonConnections["UserInput"] = UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
         if input.UserInputType ~= Enum.UserInputType.MouseButton1 and input.UserInputType ~= Enum.UserInputType.Touch then return end
         
         if not (favoriteEnabled or currentMode == "animation") then return end
@@ -1962,36 +1903,31 @@ function connectEvents()
     end)
 
     if EmoteWalkButton then
-        disconnectButton(EmoteWalkButton)
-        buttonConnections["EmoteWalk"] = EmoteWalkButton.MouseButton1Click:Connect(function()
+        EmoteWalkButton.MouseButton1Click:Connect(function()
             safeButtonClick("EmoteWalk", toggleEmoteWalk)
         end)
     end
 
     if Favorite then
-        disconnectButton(Favorite)
-        buttonConnections["Favorite"] = Favorite.MouseButton1Click:Connect(function()
+        Favorite.MouseButton1Click:Connect(function()
             safeButtonClick("Favorite", toggleFavoriteMode)
         end)
     end
 
     if SpeedEmote then
-        disconnectButton(SpeedEmote)
-        buttonConnections["SpeedEmote"] = SpeedEmote.MouseButton1Click:Connect(function()
+        SpeedEmote.MouseButton1Click:Connect(function()
             safeButtonClick("SpeedEmote", toggleSpeedEmote)
         end)
     end
 
     if Reload then
-        disconnectButton(Reload)
-        buttonConnections["Reload"] = Reload.MouseButton1Click:Connect(function()
-            safeButtonClick("AutoReload", toggleAutoReload)
-        end)
-    end
+    Reload.MouseButton1Click:Connect(function()
+        safeButtonClick("AutoReload", toggleAutoReload)
+    end)
+end
 
 if Changepage then
-    disconnectButton(Changepage)
-    buttonConnections["Changepage"] = Changepage.MouseButton1Click:Connect(function()
+    Changepage.MouseButton1Click:Connect(function()
         stopEmoteClickDetection()
         
         if currentMode == "emote" then
@@ -2009,7 +1945,7 @@ if Changepage then
             end)
             
             getgenv().Notify({
-                Title = 'qShadow | Animation',
+                Title = '7yd7 | Animation',
                 Content = '📄 Changed to Emote > Animation Mode',
                 Duration = 3
             })
@@ -2027,7 +1963,7 @@ if Changepage then
             end
             
             getgenv().Notify({
-                Title = 'qShadow | Emote', 
+                Title = '7yd7 | Emote', 
                 Content = '📄 Changed to Animation > Emote Mode',
                 Duration = 3
             })
@@ -2036,10 +1972,7 @@ if Changepage then
 end
 
     if SpeedBox then
-        if buttonConnections["SpeedBox"] then
-            buttonConnections["SpeedBox"]:Disconnect()
-        end
-        buttonConnections["SpeedBox"] = SpeedBox.FocusLost:Connect(function()
+        SpeedBox.FocusLost:Connect(function()
             if writefile then
                 writefile(speedEmoteConfigFile, HttpService:JSONEncode({
                     Enabled = speedEmoteEnabled,
@@ -2188,7 +2121,7 @@ end)
 if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/OpenEmote.lua"))()
     getgenv().Notify({
-        Title = 'qShadow | Emote Mobile',
+        Title = '7yd7 | Emote Mobile',
         Content = '📱 Added emote open button for ease of use',
         Duration = 10
     })
@@ -2196,7 +2129,7 @@ end
 
 if UserInputService.KeyboardEnabled then
     getgenv().Notify({
-        Title = 'qShadow | Emote PC',
+        Title = '7yd7 | Emote PC',
         Content = '💻 Open menu press button "."',
         Duration = 10
     })
