@@ -18,8 +18,8 @@ Window:CreateTopbarButton("Items", "syringe", function()
 	loadstring(game:HttpGet("https://pastefy.app/qpbQo0lr/raw"))()
 end, 990)
 
-Window:CreateTopbarButton("starbutton1", "scroll", function() 
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/qShadow14/All-In-One/refs/heads/main/Andrei-Script.lua"))()
+Window:CreateTopbarButton("starbutton1", "skull", function() 
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/qShadow14/All-In-One/refs/heads/main/Game_kick.lua"))()
 end, 990)
 
 Window:CreateTopbarButton("starbutton1", "scroll", function() 
