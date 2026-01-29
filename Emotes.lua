@@ -9,7 +9,7 @@
 
 if _G.EmotesGUIRunning then
     getgenv().Notify({
-        Title = '7yd7 | Emote',
+        Title = 'qShadow | Emote',
         Content = '⚠️ It works It actually works',
         Duration = 5
     })
@@ -23,7 +23,7 @@ pcall(function()
 end)
 
 getgenv().Notify({
-    Title = '7yd7 | Emote',
+    Title = 'qShadow | Emote',
     Content = '⚠️ Script loading...',
     Duration = 5
 })
@@ -922,7 +922,7 @@ local function toggleFavorite(emoteId, emoteName)
     if found then
         table.remove(favoriteEmotes, index)
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'qShadow | Favorite System',
             Content = '🗑️ Removed "' .. emoteName .. '" from favorites',
             Duration = 3
         })
@@ -932,7 +932,7 @@ local function toggleFavorite(emoteId, emoteName)
             name = emoteName .. " - ⭐"
         })
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'qShadow | Favorite System',
             Content = '✅ Added "' .. emoteName .. '" to favorites',
             Duration = 3
         })
@@ -963,7 +963,7 @@ local function toggleFavoriteAnimation(animationData)
     if found then
         table.remove(favoriteAnimations, index)
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'qShadow | Favorite System',
             Content = '🗑️ Removed "' .. animationData.name .. '" from favorites',
             Duration = 3
         })
@@ -974,7 +974,7 @@ local function toggleFavoriteAnimation(animationData)
             bundledItems = animationData.bundledItems
         })
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'qShadow | Favorite System',
             Content = '✅ Added "' .. animationData.name .. '" to favorites',
             Duration = 3
         })
@@ -1047,7 +1047,7 @@ local function applyAnimation(animationData)
     
     if not animate or not humanoid then
         getgenv().Notify({
-            Title = '7yd7 | Animation Error',
+            Title = 'qShadow | Animation Error',
             Content = '❌ Animate or Humanoid not found',
             Duration = 3
         })
@@ -1061,7 +1061,7 @@ local function applyAnimation(animationData)
     
     if not bundledItems then
         getgenv().Notify({
-            Title = '7yd7 | Animation Error', 
+            Title = 'qShadow | Animation Error', 
             Content = '❌ No bundled items found',
             Duration = 3
         })
@@ -1344,7 +1344,7 @@ local function fetchAllEmotes()
     updateEmotes()
     
     getgenv().Notify({
-        Title = '7yd7 | Emote',
+        Title = 'qShadow | Emote',
         Content = "🎉 Loaded Successfully! Total Emotes: " .. totalEmotesLoaded,
         Duration = 5
     })
@@ -1391,7 +1391,7 @@ end
 local function searchEmotes(searchTerm)
     if isLoading then
         getgenv().Notify({
-            Title = '7yd7 | Emote',
+            Title = 'qShadow | Emote',
             Content = '⚠️ Loading please wait...',
             Duration = 5
         })
@@ -1470,7 +1470,7 @@ end
 local function searchAnimations(searchTerm)
     if isLoading then
         getgenv().Notify({
-            Title = '7yd7 | Animation',
+            Title = 'qShadow | Animation',
             Content = '⚠️ Loading please wait...',
             Duration = 5
         })
@@ -1610,7 +1610,7 @@ local function onCharacterAdded(character)
     task.wait(.3)
     applyAnimation(getgenv().lastPlayedAnimation)
     getgenv().Notify({
-        Title = '7yd7 | Auto Reload Animation',
+        Title = 'qShadow | Auto Reload Animation',
         Content = '🔄 The last animation was automatically \n reapplied',
         Duration = 3
     })
@@ -1680,7 +1680,7 @@ local function toggleEmoteWalk()
 
     if emotesWalkEnabled then
         getgenv().Notify({
-            Title = '7yd7 | Emote Freeze',
+            Title = 'qShadow | Emote Freeze',
             Content = "🔒 Emote freeze ON",
             Duration = 5
         })
@@ -1693,7 +1693,7 @@ local function toggleEmoteWalk()
         end
     else
         getgenv().Notify({
-            Title = '7yd7 | Emote Freeze',
+            Title = 'qShadow | Emote Freeze',
             Content = '🔓 Emote freeze OFF',
             Duration = 5
         })
@@ -1717,7 +1717,7 @@ local function toggleSpeedEmote()
 
     if speedEmoteEnabled then
         getgenv().Notify({
-            Title = '7yd7 | Speed Emote',
+            Title = 'qShadow | Speed Emote',
             Content = "⚡ Speed Emote ON",
             Duration = 5
         })
@@ -1725,7 +1725,7 @@ local function toggleSpeedEmote()
         stopCurrentEmote()
     else
         getgenv().Notify({
-            Title = '7yd7 | Speed Emote',
+            Title = 'qShadow | Speed Emote',
             Content = '⚡ Speed Emote OFF',
             Duration = 5
         })
@@ -1747,7 +1747,7 @@ local function toggleFavoriteMode()
     if favoriteEnabled then
         Favorite.Image = "rbxassetid://97307461910825"
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'qShadow | Favorite System',
             Content = "🔒 Favorite ON",
             Duration = 5
         })
@@ -1760,7 +1760,7 @@ local function toggleFavoriteMode()
     else
         Favorite.Image = "rbxassetid://124025954365505"
         getgenv().Notify({
-            Title = '7yd7 | Favorite System',
+            Title = 'qShadow | Favorite System',
             Content = '🔓 Favorite OFF',
             Duration = 3
         })
@@ -1810,13 +1810,13 @@ local function toggleAutoReload()
     
     if getgenv().autoReloadEnabled then
         getgenv().Notify({
-            Title = '7yd7 | Auto Reload Animation',
+            Title = 'qShadow | Auto Reload Animation',
             Content = "🔄 Auto Reload ON",
             Duration = 5
         })
     else
         getgenv().Notify({
-            Title = '7yd7 | Auto Reload Animation',
+            Title = 'qShadow | Auto Reload Animation',
             Content = '🔄 Auto Reload OFF',
             Duration = 3
         })
@@ -1945,7 +1945,7 @@ if Changepage then
             end)
             
             getgenv().Notify({
-                Title = '7yd7 | Animation',
+                Title = 'qShadow | Animation',
                 Content = '📄 Changed to Emote > Animation Mode',
                 Duration = 3
             })
@@ -1963,7 +1963,7 @@ if Changepage then
             end
             
             getgenv().Notify({
-                Title = '7yd7 | Emote', 
+                Title = 'qShadow | Emote', 
                 Content = '📄 Changed to Animation > Emote Mode',
                 Duration = 3
             })
@@ -2121,7 +2121,7 @@ end)
 if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/OpenEmote.lua"))()
     getgenv().Notify({
-        Title = '7yd7 | Emote Mobile',
+        Title = 'qShadpw | Emote Mobile',
         Content = '📱 Added emote open button for ease of use',
         Duration = 10
     })
@@ -2129,7 +2129,7 @@ end
 
 if UserInputService.KeyboardEnabled then
     getgenv().Notify({
-        Title = '7yd7 | Emote PC',
+        Title = 'qShadow | Emote PC',
         Content = '💻 Open menu press button "."',
         Duration = 10
     })
