@@ -606,8 +606,12 @@ local function calculateTotalPages()
             end
         end
         local normalPagesCount = #normalAnimations > 0 and math.ceil(#normalAnimations / itemsPerPage) or 0
-        
+
         local totalPages = favoritePagesCount + normalPagesCount
+        -- Debug info
+        pcall(function()
+            print(string.format("[EmoteDebug] mode=animation favorites=%d filteredAnimations=%d favPages=%d normPages=%d total=%d", #favoritesToUse, #filteredAnimations, favoritePagesCount, normalPagesCount, totalPages))
+        end)
         return math.max(totalPages, 1)
     end
     
@@ -623,8 +627,12 @@ local function calculateTotalPages()
         end
     end
     local normalPagesCount = #normalEmotes > 0 and math.ceil(#normalEmotes / itemsPerPage) or 0
-    
+
     local totalPages = favoritePagesCount + normalPagesCount
+    -- Debug info
+    pcall(function()
+        print(string.format("[EmoteDebug] mode=emote favorites=%d filteredEmotes=%d favPages=%d normPages=%d total=%d", #favoritesToUse, #filteredEmotes, favoritePagesCount, normalPagesCount, totalPages))
+    end)
     return math.max(totalPages, 1)
 end
 
@@ -921,7 +929,8 @@ UICorner_6.CornerRadius = UDim.new(0, 10)
 UICorner_6.Parent = Reload
 
     loadSpeedEmoteConfig()
-
+    -- Ensure events are re-bound for newly created UI
+    eventsConnected = false
     connectEvents()
     isGUICreated = true
     updateGUIColors()
