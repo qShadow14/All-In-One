@@ -588,14 +588,36 @@ end
 -- FIXED FUNCTION: Simplified pagination calculation
 local function calculateTotalPages()
     if currentMode == "animation" then
-        -- Simply count all filtered animations
-        local totalCount = #filteredAnimations
-        return math.max(math.ceil(totalCount / itemsPerPage), 1)
+        -- Count favorites + non-favorite filtered animations
+        local favoritesToUse = _G.filteredFavoritesAnimationsForDisplay or favoriteAnimations
+        local favoritePagesCount = #favoritesToUse > 0 and math.ceil(#favoritesToUse / itemsPerPage) or 0
+        
+        -- Count non-favorite animations
+        local normalAnimations = {}
+        for _, animation in pairs(filteredAnimations) do
+            if not isInFavorites(animation.id) then
+                table.insert(normalAnimations, animation)
+            end
+        end
+        local normalPagesCount = #normalAnimations > 0 and math.ceil(#normalAnimations / itemsPerPage) or 0
+        
+        return math.max(favoritePagesCount + normalPagesCount, 1)
     end
     
-    -- Simply count all filtered emotes
-    local totalCount = #filteredEmotes
-    return math.max(math.ceil(totalCount / itemsPerPage), 1)
+    -- Count favorites + non-favorite filtered emotes
+    local favoritesToUse = _G.filteredFavoritesForDisplay or favoriteEmotes
+    local favoritePagesCount = #favoritesToUse > 0 and math.ceil(#favoritesToUse / itemsPerPage) or 0
+    
+    -- Count non-favorite emotes
+    local normalEmotes = {}
+    for _, emote in pairs(filteredEmotes) do
+        if not isInFavorites(emote.id) then
+            table.insert(normalEmotes, emote)
+        end
+    end
+    local normalPagesCount = #normalEmotes > 0 and math.ceil(#normalEmotes / itemsPerPage) or 0
+    
+    return math.max(favoritePagesCount + normalPagesCount, 1)
 end
 
 local function isGivenAnimation(animationHolder, animationId)
