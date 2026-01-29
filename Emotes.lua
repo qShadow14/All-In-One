@@ -482,6 +482,9 @@ local function updateAnimations()
         end
 
         local adjustedPage = currentPage - favoritePagesCount
+        if adjustedPage < 1 then
+            adjustedPage = 1
+        end
         local startIndex = (adjustedPage - 1) * itemsPerPage + 1
         local endIndex = math.min(startIndex + itemsPerPage - 1, #normalAnimations)
 
@@ -558,6 +561,9 @@ local function updateEmotes()
         end
 
         local adjustedPage = currentPage - favoritePagesCount
+        if adjustedPage < 1 then
+            adjustedPage = 1
+        end
         local startIndex = (adjustedPage - 1) * itemsPerPage + 1
         local endIndex = math.min(startIndex + itemsPerPage - 1, #normalEmotes)
 
@@ -601,7 +607,8 @@ local function calculateTotalPages()
         end
         local normalPagesCount = #normalAnimations > 0 and math.ceil(#normalAnimations / itemsPerPage) or 0
         
-        return math.max(favoritePagesCount + normalPagesCount, 1)
+        local totalPages = favoritePagesCount + normalPagesCount
+        return math.max(totalPages, 1)
     end
     
     -- Count favorites + non-favorite filtered emotes
@@ -617,7 +624,8 @@ local function calculateTotalPages()
     end
     local normalPagesCount = #normalEmotes > 0 and math.ceil(#normalEmotes / itemsPerPage) or 0
     
-    return math.max(favoritePagesCount + normalPagesCount, 1)
+    local totalPages = favoritePagesCount + normalPagesCount
+    return math.max(totalPages, 1)
 end
 
 local function isGivenAnimation(animationHolder, animationId)
