@@ -2,14 +2,12 @@
     Source script taken from: https://github.com/Roblox/creator-docs/blob/main/content/en-us/characters/emotes.md
 
     scriptblox: https://scriptblox.com/script/Universal-Script-7yd7-I-Emote-Script-48024
-    
-    FIXED VERSION: Corrected pagination logic to display correct number of pages
 ]]
 
 
 if _G.EmotesGUIRunning then
     getgenv().Notify({
-        Title = 'qShadow | Emote',
+        Title = '7yd7 | Emote',
         Content = '⚠️ It works It actually works',
         Duration = 5
     })
@@ -23,7 +21,7 @@ pcall(function()
 end)
 
 getgenv().Notify({
-    Title = 'qShadow | Emote',
+    Title = '7yd7 | Emote',
     Content = '⚠️ Script loading...',
     Duration = 5
 })
@@ -482,9 +480,6 @@ local function updateAnimations()
         end
 
         local adjustedPage = currentPage - favoritePagesCount
-        if adjustedPage < 1 then
-            adjustedPage = 1
-        end
         local startIndex = (adjustedPage - 1) * itemsPerPage + 1
         local endIndex = math.min(startIndex + itemsPerPage - 1, #normalAnimations)
 
@@ -561,9 +556,6 @@ local function updateEmotes()
         end
 
         local adjustedPage = currentPage - favoritePagesCount
-        if adjustedPage < 1 then
-            adjustedPage = 1
-        end
         local startIndex = (adjustedPage - 1) * itemsPerPage + 1
         local endIndex = math.min(startIndex + itemsPerPage - 1, #normalEmotes)
 
@@ -591,49 +583,34 @@ local function updateEmotes()
     end)
 end
 
--- FIXED FUNCTION: Simplified pagination calculation
 local function calculateTotalPages()
-    if currentMode == "animation" then
-        -- Count favorites + non-favorite filtered animations
+      if currentMode == "animation" then
         local favoritesToUse = _G.filteredFavoritesAnimationsForDisplay or favoriteAnimations
-        local favoritePagesCount = #favoritesToUse > 0 and math.ceil(#favoritesToUse / itemsPerPage) or 0
-        
-        -- Count non-favorite animations
-        local normalAnimations = {}
+        local favoritesCount = #favoritesToUse
+
+        local normalAnimationsCount = 0
         for _, animation in pairs(filteredAnimations) do
             if not isInFavorites(animation.id) then
-                table.insert(normalAnimations, animation)
+                normalAnimationsCount = normalAnimationsCount + 1
             end
         end
-        local normalPagesCount = #normalAnimations > 0 and math.ceil(#normalAnimations / itemsPerPage) or 0
 
-        local totalPages = favoritePagesCount + normalPagesCount
-        -- Debug info
-        pcall(function()
-            print(string.format("[EmoteDebug] mode=animation favorites=%d filteredAnimations=%d favPages=%d normPages=%d total=%d", #favoritesToUse, #filteredAnimations, favoritePagesCount, normalPagesCount, totalPages))
-        end)
-        return math.max(totalPages, 1)
+        local totalCount = favoritesCount + normalAnimationsCount
+        return math.max(math.ceil(totalCount / itemsPerPage), 1)
     end
-    
-    -- Count favorites + non-favorite filtered emotes
+
     local favoritesToUse = _G.filteredFavoritesForDisplay or favoriteEmotes
-    local favoritePagesCount = #favoritesToUse > 0 and math.ceil(#favoritesToUse / itemsPerPage) or 0
-    
-    -- Count non-favorite emotes
-    local normalEmotes = {}
+    local favoritesCount = #favoritesToUse
+
+    local normalEmotesCount = 0
     for _, emote in pairs(filteredEmotes) do
         if not isInFavorites(emote.id) then
-            table.insert(normalEmotes, emote)
+            normalEmotesCount = normalEmotesCount + 1
         end
     end
-    local normalPagesCount = #normalEmotes > 0 and math.ceil(#normalEmotes / itemsPerPage) or 0
 
-    local totalPages = favoritePagesCount + normalPagesCount
-    -- Debug info
-    pcall(function()
-        print(string.format("[EmoteDebug] mode=emote favorites=%d filteredEmotes=%d favPages=%d normPages=%d total=%d", #favoritesToUse, #filteredEmotes, favoritePagesCount, normalPagesCount, totalPages))
-    end)
-    return math.max(totalPages, 1)
+    local totalCount = favoritesCount + normalEmotesCount
+    return math.max(math.ceil(totalCount / itemsPerPage), 1)
 end
 
 local function isGivenAnimation(animationHolder, animationId)
@@ -929,8 +906,7 @@ UICorner_6.CornerRadius = UDim.new(0, 10)
 UICorner_6.Parent = Reload
 
     loadSpeedEmoteConfig()
-    -- Ensure events are re-bound for newly created UI
-    eventsConnected = false
+
     connectEvents()
     isGUICreated = true
     updateGUIColors()
@@ -961,7 +937,7 @@ local function toggleFavorite(emoteId, emoteName)
     if found then
         table.remove(favoriteEmotes, index)
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '🗑️ Removed "' .. emoteName .. '" from favorites',
             Duration = 3
         })
@@ -971,7 +947,7 @@ local function toggleFavorite(emoteId, emoteName)
             name = emoteName .. " - ⭐"
         })
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '✅ Added "' .. emoteName .. '" to favorites',
             Duration = 3
         })
@@ -1002,7 +978,7 @@ local function toggleFavoriteAnimation(animationData)
     if found then
         table.remove(favoriteAnimations, index)
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '🗑️ Removed "' .. animationData.name .. '" from favorites',
             Duration = 3
         })
@@ -1013,7 +989,7 @@ local function toggleFavoriteAnimation(animationData)
             bundledItems = animationData.bundledItems
         })
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '✅ Added "' .. animationData.name .. '" to favorites',
             Duration = 3
         })
@@ -1086,7 +1062,7 @@ local function applyAnimation(animationData)
     
     if not animate or not humanoid then
         getgenv().Notify({
-            Title = 'qShadow | Animation Error',
+            Title = '7yd7 | Animation Error',
             Content = '❌ Animate or Humanoid not found',
             Duration = 3
         })
@@ -1100,7 +1076,7 @@ local function applyAnimation(animationData)
     
     if not bundledItems then
         getgenv().Notify({
-            Title = 'qShadow | Animation Error', 
+            Title = '7yd7 | Animation Error', 
             Content = '❌ No bundled items found',
             Duration = 3
         })
@@ -1383,7 +1359,7 @@ local function fetchAllEmotes()
     updateEmotes()
     
     getgenv().Notify({
-        Title = 'qShadow | Emote',
+        Title = '7yd7 | Emote',
         Content = "🎉 Loaded Successfully! Total Emotes: " .. totalEmotesLoaded,
         Duration = 5
     })
@@ -1430,7 +1406,7 @@ end
 local function searchEmotes(searchTerm)
     if isLoading then
         getgenv().Notify({
-            Title = 'qShadow | Emote',
+            Title = '7yd7 | Emote',
             Content = '⚠️ Loading please wait...',
             Duration = 5
         })
@@ -1509,7 +1485,7 @@ end
 local function searchAnimations(searchTerm)
     if isLoading then
         getgenv().Notify({
-            Title = 'qShadow | Animation',
+            Title = '7yd7 | Animation',
             Content = '⚠️ Loading please wait...',
             Duration = 5
         })
@@ -1649,7 +1625,7 @@ local function onCharacterAdded(character)
     task.wait(.3)
     applyAnimation(getgenv().lastPlayedAnimation)
     getgenv().Notify({
-        Title = 'qShadow | Auto Reload Animation',
+        Title = '7yd7 | Auto Reload Animation',
         Content = '🔄 The last animation was automatically \n reapplied',
         Duration = 3
     })
@@ -1719,7 +1695,7 @@ local function toggleEmoteWalk()
 
     if emotesWalkEnabled then
         getgenv().Notify({
-            Title = 'qShadow | Emote Freeze',
+            Title = '7yd7 | Emote Freeze',
             Content = "🔒 Emote freeze ON",
             Duration = 5
         })
@@ -1732,7 +1708,7 @@ local function toggleEmoteWalk()
         end
     else
         getgenv().Notify({
-            Title = 'qShadow | Emote Freeze',
+            Title = '7yd7 | Emote Freeze',
             Content = '🔓 Emote freeze OFF',
             Duration = 5
         })
@@ -1756,7 +1732,7 @@ local function toggleSpeedEmote()
 
     if speedEmoteEnabled then
         getgenv().Notify({
-            Title = 'qShadow | Speed Emote',
+            Title = '7yd7 | Speed Emote',
             Content = "⚡ Speed Emote ON",
             Duration = 5
         })
@@ -1764,7 +1740,7 @@ local function toggleSpeedEmote()
         stopCurrentEmote()
     else
         getgenv().Notify({
-            Title = 'qShadow | Speed Emote',
+            Title = '7yd7 | Speed Emote',
             Content = '⚡ Speed Emote OFF',
             Duration = 5
         })
@@ -1786,7 +1762,7 @@ local function toggleFavoriteMode()
     if favoriteEnabled then
         Favorite.Image = "rbxassetid://97307461910825"
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = "🔒 Favorite ON",
             Duration = 5
         })
@@ -1799,7 +1775,7 @@ local function toggleFavoriteMode()
     else
         Favorite.Image = "rbxassetid://124025954365505"
         getgenv().Notify({
-            Title = 'qShadow | Favorite System',
+            Title = '7yd7 | Favorite System',
             Content = '🔓 Favorite OFF',
             Duration = 3
         })
@@ -1849,26 +1825,20 @@ local function toggleAutoReload()
     
     if getgenv().autoReloadEnabled then
         getgenv().Notify({
-            Title = 'qShadow | Auto Reload Animation',
+            Title = '7yd7 | Auto Reload Animation',
             Content = "🔄 Auto Reload ON",
             Duration = 5
         })
     else
         getgenv().Notify({
-            Title = 'qShadow | Auto Reload Animation',
+            Title = '7yd7 | Auto Reload Animation',
             Content = '🔄 Auto Reload OFF',
             Duration = 3
         })
     end
 end
 
-local eventsConnected = false
-
 function connectEvents()
-    if eventsConnected then return end
-    eventsConnected = true
-
-    -- Navigare pagini
     if _1left then
         _1left.MouseButton1Click:Connect(previousPage)
     end
@@ -1877,8 +1847,7 @@ function connectEvents()
         _9right.MouseButton1Click:Connect(nextPage)
     end
 
-    -- Input număr pagină
-    if _2Routenumber then
+      if _2Routenumber then
         _2Routenumber.FocusLost:Connect(function(enterPressed)
             local pageNum = tonumber(_2Routenumber.Text)
             if pageNum then
@@ -1889,7 +1858,6 @@ function connectEvents()
         end)
     end
 
-    -- Căutare emote / animație
     if Search then
         Search.Changed:Connect(function(property)
             if property == "Text" then
@@ -1984,7 +1952,7 @@ if Changepage then
             end)
             
             getgenv().Notify({
-                Title = 'qShadow | Animation',
+                Title = '7yd7 | Animation',
                 Content = '📄 Changed to Emote > Animation Mode',
                 Duration = 3
             })
@@ -2002,7 +1970,7 @@ if Changepage then
             end
             
             getgenv().Notify({
-                Title = 'qShadow | Emote', 
+                Title = '7yd7 | Emote', 
                 Content = '📄 Changed to Animation > Emote Mode',
                 Duration = 3
             })
@@ -2160,7 +2128,7 @@ end)
 if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/OpenEmote.lua"))()
     getgenv().Notify({
-        Title = 'qShadpw | Emote Mobile',
+        Title = '7yd7 | Emote Mobile',
         Content = '📱 Added emote open button for ease of use',
         Duration = 10
     })
@@ -2168,7 +2136,7 @@ end
 
 if UserInputService.KeyboardEnabled then
     getgenv().Notify({
-        Title = 'qShadow | Emote PC',
+        Title = '7yd7 | Emote PC',
         Content = '💻 Open menu press button "."',
         Duration = 10
     })
