@@ -2,13 +2,6 @@
 
 A collection of custom Roblox scripts for UI systems, menus, emotes, and other gameplay features.
 
-## 📂 Contents
-
-- 🌀 `Andrei_Loadig_Screen.lua` – Custom loading screen  
-- 💃 `Emotes.lua` – Emotes system  
-- 🔐 `Fsociety+Junkie_key.lua` – Key-based access system  
-- 🧭 `Menu.lua` – Main menu system  
-- 🗂️ `Tabs+Buttons.lua` – UI with tabs and buttons  
 
 ## ⚙️ How to Use
 
