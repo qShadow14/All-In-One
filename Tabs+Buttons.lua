@@ -159,9 +159,9 @@ elseif game.PlaceId == 6516141723 then
         Icon = "code", 
         Locked = false,
     })
-    Tab:Button({Title = "Entity ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Key ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "Soluna-API(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/EndOverdosing/Soluna-API/refs/heads/main/doors.lua"))() end})
+    Tab:Button({Title = "Roshan Hub(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/ROSHANDVS2/ROSHAN-HUB-SCRIPTS/refs/heads/main/ROSHAN-DOORS-PAGUE-HUB.lua"))() end})
+    Tab:Button({Title = "Kyksikoid Hub(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/kyksikoid/Doors-Script/main/doors.lua"))() end})
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "No Entity", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
