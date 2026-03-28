@@ -93,7 +93,7 @@ elseif game.PlaceId == 6918802178 then
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 7. Blox Fruit
-elseif game.PlaceId == 537413528 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+elseif game.PlaceId == 2753915549 then
     local Tab = Window:Tab({
         Title = "[7] Blox Fruit", 
         Icon = "code", 
@@ -1144,8 +1144,8 @@ elseif game.PlaceId == 2768379856 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 102. RoBeats
-elseif game.PlaceId == 698448212 then
-    local Tab = Window:Tab({Title = "[96] RoBeats", Icon = "code", Locked = false})
+elseif game.PlaceId == 6442957604 then
+    local Tab = Window:Tab({Title = "[96] Custom Pc Tycoon", Icon = "code", Locked = false})
     Tab:Button({Title = "Auto Player (Perfect)", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Songs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1199,7 +1199,7 @@ elseif game.PlaceId == 10277607801 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 101. Sword Burst 2
-elseif game.PlaceId == 6592221222 then
+elseif game.PlaceId == 659222129 then
     local Tab = Window:Tab({Title = "[101] Sword Burst 2", Icon = "code", Locked = false})
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Mobs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1221,7 +1221,7 @@ elseif game.PlaceId == 443406476 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 103. Midnight Racing: Tokyo
-elseif game.PlaceId == 3620827253 then
+elseif game.PlaceId == 3339374541 then
     local Tab = Window:Tab({Title = "[103] Midnight Racing", Icon = "code", Locked = false})
     Tab:Button({Title = "Auto Race Win", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Max Acceleration", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1232,7 +1232,7 @@ elseif game.PlaceId == 3620827253 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 104. Pizza Factory Tycoon
-elseif game.PlaceId == 1000000104 then
+elseif game.PlaceId == 470702250 then
     local Tab = Window:Tab({Title = "[104] Pizza Factory", Icon = "code", Locked = false})
     Tab:Button({Title = "Auto Collect Cash", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Buy Droppers", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1243,7 +1243,7 @@ elseif game.PlaceId == 1000000104 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 105. Starscape
-elseif game.PlaceId == 1000000105 then
+elseif game.PlaceId == 679715583 then
     local Tab = Window:Tab({Title = "[105] Starscape", Icon = "code", Locked = false})
     Tab:Button({Title = "Auto Mine Ores", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Ships", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1254,7 +1254,7 @@ elseif game.PlaceId == 1000000105 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 106. Pilot Training Flight Simulator
-elseif game.PlaceId == 1000000106 then
+elseif game.PlaceId == 20321167 then
     local Tab = Window:Tab({Title = "[106] Flight Simulator", Icon = "code", Locked = false})
     Tab:Button({Title = "Unlock All Planes", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Fly/Land", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1265,7 +1265,7 @@ elseif game.PlaceId == 1000000106 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 107. Tiny Sailors: World
-elseif game.PlaceId == 1000000107 then
+elseif game.PlaceId == 7175479191 then
     local Tab = Window:Tab({Title = "[107] Tiny Sailors", Icon = "code", Locked = false})
     Tab:Button({Title = "Unlock All Ships", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Sink Ships", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1276,7 +1276,7 @@ elseif game.PlaceId == 1000000107 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 108. Ro-Scale Sandbox
-elseif game.PlaceId == 1000000108 then
+elseif game.PlaceId == 133253166104607 then
     local Tab = Window:Tab({Title = "[108] Ro-Scale Sandbox", Icon = "code", Locked = false})
     Tab:Button({Title = "Unlock All Trains", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Max Train Speed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1287,7 +1287,7 @@ elseif game.PlaceId == 1000000108 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 109. Booga Booga
-elseif game.PlaceId == 1000000109 then
+elseif game.PlaceId == 11729688377 then
     local Tab = Window:Tab({Title = "[109] Booga Booga", Icon = "code", Locked = false})
     Tab:Button({Title = "Auto Mine Ores", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1298,7 +1298,7 @@ elseif game.PlaceId == 1000000109 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 110. Bear (Alpha)
-elseif game.PlaceId == 1000000110 then
+elseif game.PlaceId == 3203685552 then
     local Tab = Window:Tab({Title = "[110] Bear (Alpha)", Icon = "code", Locked = false})
     Tab:Button({Title = "ESP Bear", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Cheese/Puzzles", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1309,7 +1309,7 @@ elseif game.PlaceId == 1000000110 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 111. Specter
-elseif game.PlaceId == 1000000111 then
+elseif game.PlaceId == 8267733039 then
     local Tab = Window:Tab({Title = "[111] Specter", Icon = "code", Locked = false})
     Tab:Button({Title = "ESP Ghost/Room", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Guess Ghost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1320,7 +1320,7 @@ elseif game.PlaceId == 1000000111 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 112. The Mimic
-elseif game.PlaceId == 1000000112 then
+elseif game.PlaceId == 6243699076 then
     local Tab = Window:Tab({Title = "[112] The Mimic", Icon = "code", Locked = false})
     Tab:Button({Title = "ESP Monsters/Books", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1331,7 +1331,7 @@ elseif game.PlaceId == 1000000112 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 113. Cheese Escape
-elseif game.PlaceId == 1000000113 then
+elseif game.PlaceId == 5777099015 then
     local Tab = Window:Tab({Title = "[113] Cheese Escape", Icon = "code", Locked = false})
     Tab:Button({Title = "ESP Cheese/Keys", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Rat", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1342,7 +1342,7 @@ elseif game.PlaceId == 1000000113 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 114. Assassin!
-elseif game.PlaceId == 1000000114 then
+elseif game.PlaceId == 379614936 then
     local Tab = Window:Tab({Title = "[114] Assassin!", Icon = "code", Locked = false})
     Tab:Button({Title = "ESP Target/Hunter", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Aimbot Throw", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1353,7 +1353,7 @@ elseif game.PlaceId == 1000000114 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 115. Marvel New Journey
-elseif game.PlaceId == 1000000115 then
+elseif game.PlaceId == 94847322262109 then
     local Tab = Window:Tab({Title = "[115] Marvel New Journey", Icon = "code", Locked = false})
     Tab:Button({Title = "Aimbot Skills", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "No Cooldowns", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
