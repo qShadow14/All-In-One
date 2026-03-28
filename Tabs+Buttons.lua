@@ -138,7 +138,7 @@ elseif game.PlaceId == 16732031560 then
     Tab:Button({Title = "Infinite Ammo", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 11. Doors
-elseif game.PlaceId == 6516141723 then
+elseif game.GameId == 6516141723 then
     local Tab = Window:Tab({
         Title = "[10] Doors", 
         Icon = "code", 
