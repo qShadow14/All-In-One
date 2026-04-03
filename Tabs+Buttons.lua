@@ -5,17 +5,33 @@
 -- 1. Car Crusher 2
 if game.PlaceId == 654732683 then
     local Tab = Window:Tab({
-        Title = "[1] Car Crusher 2", 
+        Title = "[1] Car Crusher 2",
         Icon = "code",
         Locked = false,
     })
-    Tab:Toggle({Title = "Test", Callback = function(s) if s then pcall(function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end) else pcall(function() if _G.Unload then _G.Unload() end; if _G.UnloadGUI then _G.UnloadGUI() end end) end end})
+    
+    Tab:Toggle({
+        Title = "Test (Escape Tsunami Script)",
+        Callback = function(s)
+            if s then
+                pcall(function()
+                    loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))()
+                end)
+            else
+                warn("This script has no proper unload. Please rejoin the game to fully stop it.")
+                -- Uncomment the line below if you want it to auto-kick when turned off:
+                -- game.Players.LocalPlayer:Kick("Rejoin to unload the script")
+            end
+        end
+    })
+    
     Tab:Button({Title = "Auto Crusher", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Money Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Dupe Glitch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+end
 
 -- 2. Counter Blox
 elseif game.PlaceId == 301549746 then
