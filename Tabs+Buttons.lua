@@ -11,16 +11,19 @@ if game.PlaceId == 654732683 then
     })
     
     Tab:Toggle({
-        Title = "Test (Escape Tsunami Script)",
+        Title = "Test (Brainrot Tsunami Script)",
+        Default = false,           -- important for WindUI
         Callback = function(s)
             if s then
                 pcall(function()
                     loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))()
                 end)
             else
-                warn("This script has no proper unload. Please rejoin the game to fully stop it.")
-                -- Uncomment the line below if you want it to auto-kick when turned off:
-                -- game.Players.LocalPlayer:Kick("Rejoin to unload the script")
+                warn("❌ This script has NO proper unload function!")
+                warn("You must REJOIN the game to fully stop it.")
+                
+                -- Uncomment the next line if you want it to auto-kick when turned OFF:
+                -- game.Players.LocalPlayer:Kick("Rejoin the game to unload the script")
             end
         end
     })
@@ -32,6 +35,12 @@ if game.PlaceId == 654732683 then
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 end
+
+-- Add your other games below like this:
+-- if game.PlaceId == 123456789 then
+--     local Tab = Window:Tab({ Title = "[2] Game Name", Icon = "code", Locked = false })
+--     -- put toggles and buttons here
+-- end
 
 -- 2. Counter Blox
 elseif game.PlaceId == 301549746 then
