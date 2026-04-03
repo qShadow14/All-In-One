@@ -9,7 +9,7 @@ if game.PlaceId == 654732683 then
         Icon = "code",
         Locked = false,
     })
-    Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Toggle({Title = "Test", Callback = function(s) if s then loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() else if _G.Unload then _G.Unload() end end end})
     Tab:Button({Title = "Auto Crusher", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Money Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Dupe Glitch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
