@@ -15,14 +15,7 @@ if game.PlaceId == 654732683 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-
-
--- Add your other games below like this:
--- if game.PlaceId == 123456789 then
---     local Tab = Window:Tab({ Title = "[2] Game Name", Icon = "code", Locked = false })
---     -- put toggles and buttons here
--- end
-
+    
 -- 2. Counter Blox
 elseif game.PlaceId == 301549746 then
     local Tab = Window:Tab({
