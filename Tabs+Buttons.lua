@@ -1,40 +1,21 @@
 -- ============================================
 -- GAME-SPECIFIC SCRIPTS
 -- ============================================
-
 -- 1. Car Crusher 2
 if game.PlaceId == 654732683 then
-    local Tab = Window:Tab({
-        Title = "[1] Car Crusher 2",
-        Icon = "code",
-        Locked = false,
-    })
-    
-    Tab:Toggle({
-        Title = "Test (Brainrot Tsunami Script)",
-        Default = false,           -- important for WindUI
-        Callback = function(s)
-            if s then
-                pcall(function()
-                    loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))()
-                end)
-            else
-                warn("❌ This script has NO proper unload function!")
-                warn("You must REJOIN the game to fully stop it.")
-                
-                -- Uncomment the next line if you want it to auto-kick when turned OFF:
-                -- game.Players.LocalPlayer:Kick("Rejoin the game to unload the script")
-            end
-        end
-    })
-    
-    Tab:Button({Title = "Auto Crusher", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Money Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Dupe Glitch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-end
+    local Tab = Window:Tab({
+        Title = "[1] Car Crusher 2",
+        Icon = "code",
+        Locked = false,
+    })
+    Tab:Toggle({Title = "Test", Callback = function(s) if s then pcall(function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end) else pcall(function() if _G.Unload then _G.Unload() end; if _G.UnloadGUI then _G.UnloadGUI() end end) end end})
+    Tab:Button({Title = "Auto Crusher", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "Money Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "Dupe Glitch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+
 
 -- Add your other games below like this:
 -- if game.PlaceId == 123456789 then
