@@ -2287,7 +2287,7 @@ elseif game.PlaceId == 1000000199 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 201. Twisted
-elseif game.PlaceId == 6161235818 then
+elseif game.GameId == 2251388500 or game.PlaceId == 6161235818 then
     local Tab = Window:Tab({Title = "[200] Twisted", Icon = "code", Locked = false})
     Tab:Button({Title = "zixyx(KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/zixypy/zixyx/main/twisted.txt"))() end})
     Tab:Button({Title = "Auto Read Chat", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
