@@ -1,3 +1,9 @@
+local Tab = Window:Tab({
+    Title = "Credits",
+    Icon = "crown",
+    Locked = false,
+})
+
 Tab:Paragraph({
     Title = "👑 Owner",
     Desc = "[1] qShadow / Vexor ",
