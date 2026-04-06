@@ -1,3 +1,9 @@
+local Tab = Window:Tab({
+    Title = "Supported Games",
+    Icon = "gamepad-directional",
+    Locked = false,
+})
+
 -- Supported Games
 -- First paragraph: games 1-100
 Tab:Paragraph({
@@ -209,7 +215,7 @@ Tab:Paragraph({
            "[197] 💰 Bitcoin Miner\n" ..
            "[198] 🖥️ PC Building Simulator\n" ..
            "[199] 📱 YouTube Simulator\n" ..
-           "[200] 🎮 Twitch Streaming Simulator",
+		   "[200] 🌪️ Twisted",
     Color = Color3.fromRGB(80, 200, 255),
     Locked = false
 })
