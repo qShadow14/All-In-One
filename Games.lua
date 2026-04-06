@@ -2286,20 +2286,9 @@ elseif game.PlaceId == 1000000199 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 200. Twitch Streaming Simulator
-elseif game.PlaceId == 1000000200 then
-    local Tab = Window:Tab({Title = "[200] Twitch Sim", Icon = "code", Locked = false})
-    Tab:Button({Title = "Auto Stream", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Auto Read Chat", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Auto Collect Donations", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Infinite Followers", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Unlock All Setup Gears", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-
 -- 201. Twisted
 elseif game.PlaceId == 6161235818 then
-    local Tab = Window:Tab({Title = "[201] Twisted", Icon = "code", Locked = false})
+    local Tab = Window:Tab({Title = "[200] Twisted", Icon = "code", Locked = false})
     Tab:Button({Title = "zixyx(KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/zixypy/zixyx/main/twisted.txt"))() end})
     Tab:Button({Title = "Auto Read Chat", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Collect Donations", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
