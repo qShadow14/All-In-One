@@ -8,7 +8,7 @@ if game.PlaceId == 654732683 then
         Icon = "code",
         Locked = false,
     })
-    Tab:Toggle({Title = "Test", Callback = function(s) if s then pcall(function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end) else pcall(function() if _G.Unload then _G.Unload() end; if _G.UnloadGUI then _G.UnloadGUI() end end) end end})
+    Tab:Toggle({Title = "Test", Callback = function(s) if s then pcall(function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end) else pcall(function() if _G.Unload then _G.Unload() end; if _G.UnloadGUI then _G.UFnloadGUI() end end) end end})
     Tab:Button({Title = "Auto Crusher", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Money Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Dupe Glitch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -293,7 +293,7 @@ elseif game.PlaceId == 13772394625 then
         Icon = "code", 
         Locked = false,
     })
-    Tab:Button({Title = "Auto Parry", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
+    Tab:Button({Title = "Auto Parry(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Akash1al/Blade-Ball-Updated-Script/refs/heads/main/Blade-Ball-Script"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -2300,7 +2300,7 @@ elseif game.PlaceId == 1000000200 then
 -- 201. Twisted
 elseif game.PlaceId == 6161235818 then
     local Tab = Window:Tab({Title = "[201] Twisted", Icon = "code", Locked = false})
-    Tab:Button({Title = "zixyx", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/zixypy/zixyx/main/twisted.txt"))() end})
+    Tab:Button({Title = "zixyx(KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/zixypy/zixyx/main/twisted.txt"))() end})
     Tab:Button({Title = "Auto Read Chat", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Collect Donations", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Followers", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
