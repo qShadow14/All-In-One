@@ -87,10 +87,19 @@ local WelcomeMessages = {
 }
 
 -- ================================================
--- GET PLAYER ROLE
+-- GET PLAYER ROLE & SEND NOTIFICATION
 -- ================================================
 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+
 local LocalPlayer = Players.LocalPlayer
 local userId = LocalPlayer.UserId
 local role = PlayerRoles[userId] or "User"
-local data = RoleData[role] or RoleData["User"]
+local message = WelcomeMessages[role] or WelcomeMessages["User"]
+
+-- Send notification
+StarterGui:SetCore("SendNotification", {
+    Title = "Role: " .. role,
+    Text = message,
+    Duration = 6,
+})
