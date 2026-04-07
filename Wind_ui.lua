@@ -12210,22 +12210,36 @@ if au.Author then
 m = createAuthor(au.Author)
 end
 
+-- ==================== CUSTOM TITLE POSITION SUPPORT ====================
+local titleContainer = au.UIElements.Main.Main.Topbar.Left
+
 -- Create the Title label
 local r = am("TextLabel", {
-Text = au.Title,
-FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
-BackgroundTransparency = 1,
-AutomaticSize = "XY",
-Name = "Title",
-TextXAlignment = "Left",
-TextSize = 16,
-ThemeTag = {
-TextColor3 = "WindowTopbarTitle",
-},
+    Text = au.Title,
+    FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
+    BackgroundTransparency = 1,
+    AutomaticSize = "XY",
+    Name = "Title",
+    TextXAlignment = "Left",
+    TextSize = 16,
+    ThemeTag = {
+        TextColor3 = "WindowTopbarTitle",
+    },
+    ZIndex = 100,
 })
 
--- NEW: Expose TitleLabel so you can modify it later
-au.TitleLabel = r
+-- Apply custom position if requested
+if au.TitlePosition then
+    r.Parent = titleContainer
+    r.Position = au.TitlePosition
+    r.AnchorPoint = Vector2.new(0, 0.5)
+    r.LayoutOrder = 999  -- High value so UIListLayout doesn't mess with it
+else
+    -- Default behavior (inside the Title frame with ListLayout)
+    r.Parent = au.UIElements.Main.Main.Topbar.Left.Title or titleContainer
+end
+
+au.TitleLabel = r  -- Expose it for later use
 
 -- ==================== TITLE POSITIONING ====================
 -- If you want to move the title to a custom position (e.g. 200 pixels from left)
