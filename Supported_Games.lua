@@ -1,6 +1,6 @@
 local Tab = Window:Tab({
     Title = "Supported Game",
-    Desc = "", -- optional
+    Desc = "What Games Supports this Script", -- optional
     Icon = "gamepad-directional", -- lucide icon or "rbxassetid://" or URL. optional
     IconColor = Color3.fromHex("#ffa600"), -- custom icon color. optional
     IconShape = "Square", -- "Square" or "Circle". optional
