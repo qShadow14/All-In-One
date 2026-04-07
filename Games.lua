@@ -5,8 +5,14 @@
 if game.PlaceId == 654732683 then
     local Tab = Window:Tab({
         Title = "[1] Car Crusher 2",
-        Icon = "code",
+        Desc = "Scripts for Car Crusher 2",
+        Icon = "car",
+        IconColor = Color3.fromHex("#ff4400"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Toggle({Title = "Test", Callback = function(s) if s then pcall(function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end) else pcall(function() if _G.Unload then _G.Unload() end; if _G.UnloadGUI then _G.UFnloadGUI() end end) end end})
     Tab:Button({Title = "Auto Crusher", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -15,13 +21,19 @@ if game.PlaceId == 654732683 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    
+
 -- 2. Counter Blox
 elseif game.PlaceId == 301549746 then
     local Tab = Window:Tab({
-        Title = "[2] Counter Blox", 
-        Icon = "code",
+        Title = "[2] Counter Blox",
+        Desc = "Scripts for Counter Blox",
+        Icon = "crosshair",
+        IconColor = Color3.fromHex("#f5a623"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "NewVape(KEY)", Callback = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Counter-Blox-Sentinel-Best-Script-70322"))() end})
     Tab:Button({Title = "Galaxy_Hub", Callback = function() loadstring(game:HttpGet("https://pastebin.com/raw/bPUYMYis"))() end})
@@ -34,9 +46,15 @@ elseif game.PlaceId == 301549746 then
 -- 3. Dead Rails
 elseif game.PlaceId == 116495829188952 then
     local Tab = Window:Tab({
-        Title = "[3] Dead Rails", 
-        Icon = "code", 
+        Title = "[3] Dead Rails",
+        Desc = "Scripts for Dead Rails",
+        Icon = "skull",
+        IconColor = Color3.fromHex("#8b0000"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "ESP Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -49,9 +67,15 @@ elseif game.PlaceId == 116495829188952 then
 -- 4. The Forge
 elseif game.PlaceId == 76558904092080 then
     local Tab = Window:Tab({
-        Title = "[4] The Forge", 
-        Icon = "code", 
+        Title = "[4] The Forge",
+        Desc = "Scripts for The Forge",
+        Icon = "hammer",
+        IconColor = Color3.fromHex("#ff6600"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Craft", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Resource ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -64,9 +88,15 @@ elseif game.PlaceId == 76558904092080 then
 -- 5. Strongman Simulator
 elseif game.PlaceId == 4282985734 then
     local Tab = Window:Tab({
-        Title = "[5] Strongman Simulator", 
-        Icon = "code", 
+        Title = "[5] Strongman Simulator",
+        Desc = "Scripts for Strongman Simulator",
+        Icon = "zap",
+        IconColor = Color3.fromHex("#ffd700"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Train", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Rebirth", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -76,12 +106,18 @@ elseif game.PlaceId == 4282985734 then
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 6. 99 night in the forest
+-- 6. 99 Night in the Forest
 elseif game.PlaceId == 6918802178 then
     local Tab = Window:Tab({
-        Title = "[6] 99 Night in Forest", 
-        Icon = "code", 
+        Title = "[6] 99 Night in Forest",
+        Desc = "Scripts for 99 Night in Forest",
+        Icon = "moon",
+        IconColor = Color3.fromHex("#2d5a27"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Survival Helper", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All Items", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -94,9 +130,15 @@ elseif game.PlaceId == 6918802178 then
 -- 7. Blox Fruit
 elseif game.PlaceId == 2753915549 then
     local Tab = Window:Tab({
-        Title = "[7] Blox Fruit", 
-        Icon = "code", 
+        Title = "[7] Blox Fruit",
+        Desc = "Scripts for Blox Fruit",
+        Icon = "star",
+        IconColor = Color3.fromHex("#ff6b00"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Hoho Hub", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Zen Hub", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -106,12 +148,18 @@ elseif game.PlaceId == 2753915549 then
     Tab:Button({Title = "Devil Fruit ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 9. osu!RoVer
+-- 8. osu!RoVer
 elseif game.PlaceId == 1224212277 then
     local Tab = Window:Tab({
-        Title = "[8] osu!RoVer", 
-        Icon = "code", 
+        Title = "[8] osu!RoVer",
+        Desc = "Scripts for osu!RoVer",
+        Icon = "music",
+        IconColor = Color3.fromHex("#ff66aa"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Play", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Perfect Hits", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -121,12 +169,18 @@ elseif game.PlaceId == 1224212277 then
     Tab:Button({Title = "Visual Helper", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock Songs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 10. Flick
+-- 9. Flick
 elseif game.PlaceId == 16732031560 then
     local Tab = Window:Tab({
-        Title = "[9] Flick", 
-        Icon = "code", 
+        Title = "[9] Flick",
+        Desc = "Scripts for Flick",
+        Icon = "crosshair",
+        IconColor = Color3.fromHex("#00ccff"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Silent Aim", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -136,12 +190,18 @@ elseif game.PlaceId == 16732031560 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Ammo", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 11. Doors
+-- 10. Doors
 elseif game.GameId == 2440500124 or game.PlaceId == 6516141723 then
     local Tab = Window:Tab({
-        Title = "[10] Doors", 
-        Icon = "code", 
+        Title = "[10] Doors",
+        Desc = "Scripts for Doors",
+        Icon = "door-open",
+        IconColor = Color3.fromHex("#c8a96e"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Soluna-API(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/EndOverdosing/Soluna-API/refs/heads/main/doors.lua"))() end})
     Tab:Button({Title = "Roshan Hub(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/ROSHANDVS2/ROSHAN-HUB-SCRIPTS/refs/heads/main/ROSHAN-DOORS-PAGUE-HUB.lua"))() end})
@@ -151,12 +211,18 @@ elseif game.GameId == 2440500124 or game.PlaceId == 6516141723 then
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 12. Evade
+-- 11. Evade
 elseif game.PlaceId == 9872472334 then
     local Tab = Window:Tab({
-        Title = "[11] Evade", 
-        Icon = "code", 
+        Title = "[11] Evade",
+        Desc = "Scripts for Evade",
+        Icon = "zap",
+        IconColor = Color3.fromHex("#39ff14"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -166,12 +232,18 @@ elseif game.PlaceId == 9872472334 then
     Tab:Button({Title = "Teleport", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 13. A dusty Trip
+-- 12. A Dusty Trip
 elseif game.PlaceId == 16389395869 then
     local Tab = Window:Tab({
-        Title = "[12] A Dusty Trip", 
-        Icon = "code", 
+        Title = "[12] A Dusty Trip",
+        Desc = "Scripts for A Dusty Trip",
+        Icon = "map",
+        IconColor = Color3.fromHex("#d4a843"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Drive", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Items", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -181,12 +253,18 @@ elseif game.PlaceId == 16389395869 then
     Tab:Button({Title = "No Damage", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 14. Build a boat for treasure (CORRECTED PlaceId - needs verification)
+-- 13. Build a Boat For Treasure
 elseif game.PlaceId == 537213528 then
     local Tab = Window:Tab({
-        Title = "[13] Build a Boat For Treasure", 
-        Icon = "code", 
+        Title = "[13] Build a Boat For Treasure",
+        Desc = "Scripts for Build a Boat For Treasure",
+        Icon = "anchor",
+        IconColor = Color3.fromHex("#1e90ff"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet('https://raw.githubusercontent.com/TheRealAsu/BABFT/refs/heads/main/Loader.lua'))() end})
     Tab:Button({Title = "Build Helper", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -196,12 +274,18 @@ elseif game.PlaceId == 537213528 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 15. Fisch
+-- 14. Fisch
 elseif game.PlaceId == 16732694052 then
     local Tab = Window:Tab({
-        Title = "[14] Fisch", 
-        Icon = "code", 
+        Title = "[14] Fisch",
+        Desc = "Scripts for Fisch",
+        Icon = "droplets",
+        IconColor = Color3.fromHex("#00bfff"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Fish", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fish ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -211,12 +295,18 @@ elseif game.PlaceId == 16732694052 then
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 16. The Train Tunnels
+-- 15. The Train Tunnels
 elseif game.PlaceId == 16140847257 then
     local Tab = Window:Tab({
-        Title = "[15] Train Tunnels", 
-        Icon = "code", 
+        Title = "[15] Train Tunnels",
+        Desc = "Scripts for Train Tunnels",
+        Icon = "train",
+        IconColor = Color3.fromHex("#555555"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -226,12 +316,18 @@ elseif game.PlaceId == 16140847257 then
     Tab:Button({Title = "Teleport", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 17. Fnaf Co-op
+-- 16. Fnaf Co-op
 elseif game.PlaceId == 16938635337 then
     local Tab = Window:Tab({
-        Title = "[16] Fnaf Co-op", 
-        Icon = "code", 
+        Title = "[16] Fnaf Co-op",
+        Desc = "Scripts for Fnaf Co-op",
+        Icon = "eye",
+        IconColor = Color3.fromHex("#9b59b6"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Animatronic ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -241,12 +337,18 @@ elseif game.PlaceId == 16938635337 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 18. Scary Shawarma
+-- 17. Scary Shawarma
 elseif game.PlaceId == 16901154463 then
     local Tab = Window:Tab({
-        Title = "[17] Scary Shawarma", 
-        Icon = "code", 
+        Title = "[17] Scary Shawarma",
+        Desc = "Scripts for Scary Shawarma",
+        Icon = "utensils",
+        IconColor = Color3.fromHex("#e67e22"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -256,12 +358,18 @@ elseif game.PlaceId == 16901154463 then
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 19. Slap battles
+-- 18. Slap Battles
 elseif game.PlaceId == 6403373529 then
     local Tab = Window:Tab({
-        Title = "[18] Slap Battles", 
-        Icon = "code", 
+        Title = "[18] Slap Battles",
+        Desc = "Scripts for Slap Battles",
+        Icon = "hand",
+        IconColor = Color3.fromHex("#ff4500"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Slap", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -271,12 +379,18 @@ elseif game.PlaceId == 6403373529 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock Gloves", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 20. Cult of the Lamb (PlaceId needs verification)
+-- 19. Cult of the Lamb
 elseif game.PlaceId == 10449761463 then
     local Tab = Window:Tab({
-        Title = "[19] Cult of the Lamb", 
-        Icon = "code", 
+        Title = "[19] Cult of the Lamb",
+        Desc = "Scripts for Cult of the Lamb",
+        Icon = "moon",
+        IconColor = Color3.fromHex("#6a0dad"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -286,12 +400,18 @@ elseif game.PlaceId == 10449761463 then
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 21. Blade Ball
+-- 20. Blade Ball
 elseif game.PlaceId == 13772394625 then
     local Tab = Window:Tab({
-        Title = "[20] Blade Ball", 
-        Icon = "code", 
+        Title = "[20] Blade Ball",
+        Desc = "Scripts for Blade Ball",
+        Icon = "sword",
+        IconColor = Color3.fromHex("#00e5ff"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Auto Parry(NO-KEY)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Akash1al/Blade-Ball-Updated-Script/refs/heads/main/Blade-Ball-Script"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -301,12 +421,18 @@ elseif game.PlaceId == 13772394625 then
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 22. Grace
+-- 21. Grace
 elseif game.PlaceId == 16799083823 then
     local Tab = Window:Tab({
-        Title = "[21] Grace", 
-        Icon = "code", 
+        Title = "[21] Grace",
+        Desc = "Scripts for Grace",
+        Icon = "sparkles",
+        IconColor = Color3.fromHex("#f5f5dc"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -316,12 +442,18 @@ elseif game.PlaceId == 16799083823 then
     Tab:Button({Title = "Teleport", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 23. Rivals
+-- 22. Rivals
 elseif game.PlaceId == 17625359962 then
     local Tab = Window:Tab({
-        Title = "[22] Rivals", 
-        Icon = "code", 
+        Title = "[22] Rivals",
+        Desc = "Scripts for Rivals",
+        Icon = "swords",
+        IconColor = Color3.fromHex("#ff2222"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -331,12 +463,18 @@ elseif game.PlaceId == 17625359962 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 24. Fnaf Eternal
+-- 23. Fnaf Eternal
 elseif game.PlaceId == 17558076607 then
     local Tab = Window:Tab({
-        Title = "[23] Fnaf Eternal", 
-        Icon = "code", 
+        Title = "[23] Fnaf Eternal",
+        Desc = "Scripts for Fnaf Eternal",
+        Icon = "eye",
+        IconColor = Color3.fromHex("#7b2d8b"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "Animatronic ESP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -346,12 +484,18 @@ elseif game.PlaceId == 17558076607 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 25. Survive the Killer
+-- 24. Survive the Killer
 elseif game.PlaceId == 4580204640 then
     local Tab = Window:Tab({
-        Title = "[24]Survive the Killer", 
-        Icon = "code", 
+        Title = "[24] Survive the Killer",
+        Desc = "Scripts for Survive the Killer",
+        Icon = "knife",
+        IconColor = Color3.fromHex("#cc0000"),
+        IconShape = "Square",
+        IconThemed = true,
         Locked = false,
+        ShowTabTitle = false,
+        Border = true,
     })
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -361,9 +505,19 @@ elseif game.PlaceId == 4580204640 then
     Tab:Button({Title = "Teleport", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 26. Arsenal
+-- 25. Arsenal
 elseif game.PlaceId == 286090429 then
-    local Tab = Window:Tab({Title = "[25] Arsenal", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[25] Arsenal",
+        Desc = "Scripts for Arsenal",
+        Icon = "crosshair",
+        IconColor = Color3.fromHex("#3a7bd5"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Ammo", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -372,9 +526,19 @@ elseif game.PlaceId == 286090429 then
     Tab:Button({Title = "Wallhack", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 27. Jailbreak
+-- 26. Jailbreak
 elseif game.PlaceId == 606849621 then
-    local Tab = Window:Tab({Title = "[26] Jailbreak", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[26] Jailbreak",
+        Desc = "Scripts for Jailbreak",
+        Icon = "lock",
+        IconColor = Color3.fromHex("#ffd700"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Rob", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Cops/Crims", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Nitro", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -383,9 +547,19 @@ elseif game.PlaceId == 606849621 then
     Tab:Button({Title = "Remove Doors", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Btools", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 28. Adopt Me!
+-- 27. Adopt Me!
 elseif game.PlaceId == 920587237 then
-    local Tab = Window:Tab({Title = "[27] Adopt Me!", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[27] Adopt Me!",
+        Desc = "Scripts for Adopt Me!",
+        Icon = "heart",
+        IconColor = Color3.fromHex("#ff69b4"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Baby/Pet", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport to Potion Shop", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly Ride Any Pet", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -394,9 +568,19 @@ elseif game.PlaceId == 920587237 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 29. Pet Simulator 99
+-- 28. Pet Simulator 99
 elseif game.PlaceId == 8737899170 then
-    local Tab = Window:Tab({Title = "[28] Pet Simulator 99", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[28] Pet Simulator 99",
+        Desc = "Scripts for Pet Simulator 99",
+        Icon = "paw-print",
+        IconColor = Color3.fromHex("#ff9900"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Tap", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hatch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Collect All Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -405,9 +589,19 @@ elseif game.PlaceId == 8737899170 then
     Tab:Button({Title = "Anti-AFK", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 30. Brookhaven RP
+-- 29. Brookhaven RP
 elseif game.PlaceId == 4924922222 then
-    local Tab = Window:Tab({Title = "[29] Brookhaven RP", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[29] Brookhaven RP",
+        Desc = "Scripts for Brookhaven RP",
+        Icon = "home",
+        IconColor = Color3.fromHex("#7ec8e3"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Troll Menu", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fling Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock Premium Passes", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -416,9 +610,19 @@ elseif game.PlaceId == 4924922222 then
     Tab:Button({Title = "Teleport to Bank", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 31. Bee Swarm Simulator
+-- 30. Bee Swarm Simulator
 elseif game.PlaceId == 1537690962 then
-    local Tab = Window:Tab({Title = "[30] Bee Swarm Sim", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[30] Bee Swarm Sim",
+        Desc = "Scripts for Bee Swarm Simulator",
+        Icon = "star",
+        IconColor = Color3.fromHex("#f5c518"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Dig", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Quest", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -427,9 +631,19 @@ elseif game.PlaceId == 1537690962 then
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Tokens", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 32. Murder Mystery 2
+-- 31. Murder Mystery 2
 elseif game.PlaceId == 1428236802 then
-    local Tab = Window:Tab({Title = "[31] Murder Mystery 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[31] Murder Mystery 2",
+        Desc = "Scripts for Murder Mystery 2",
+        Icon = "knife",
+        IconColor = Color3.fromHex("#ff0000"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Roles", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Win (Sheriff)", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Kill All (Murderer)", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -438,9 +652,19 @@ elseif game.PlaceId == 1428236802 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 33. Shindo Life
+-- 32. Shindo Life
 elseif game.PlaceId == 4616652839 then
-    local Tab = Window:Tab({Title = "[32] Shindo Life", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[32] Shindo Life",
+        Desc = "Scripts for Shindo Life",
+        Icon = "wind",
+        IconColor = Color3.fromHex("#1abc9c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Quest", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Spins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Boss", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -449,9 +673,19 @@ elseif game.PlaceId == 4616652839 then
     Tab:Button({Title = "Infinite Chakra", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 34. King Legacy
+-- 33. King Legacy
 elseif game.PlaceId == 4520749081 then
-    local Tab = Window:Tab({Title = "[33] King Legacy", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[33] King Legacy",
+        Desc = "Scripts for King Legacy",
+        Icon = "crown",
+        IconColor = Color3.fromHex("#ffd700"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Level", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Boss", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Stats", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -460,9 +694,19 @@ elseif game.PlaceId == 4520749081 then
     Tab:Button({Title = "No Clip", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 35. Anime Fighters Simulator
+-- 34. Anime Fighters Simulator
 elseif game.PlaceId == 6299805723 then
-    local Tab = Window:Tab({Title = "[34] Anime Fighters", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[34] Anime Fighters",
+        Desc = "Scripts for Anime Fighters Simulator",
+        Icon = "swords",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Attack", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Collect", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hatch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -471,9 +715,19 @@ elseif game.PlaceId == 6299805723 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Anti-AFK", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 36. Da Hood
+-- 35. Da Hood
 elseif game.PlaceId == 2788229376 then
-    local Tab = Window:Tab({Title = "[35] Da Hood", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[35] Da Hood",
+        Desc = "Scripts for Da Hood",
+        Icon = "shield",
+        IconColor = Color3.fromHex("#2c3e50"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Rob", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -482,9 +736,19 @@ elseif game.PlaceId == 2788229376 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 37. BedWars
+-- 36. BedWars
 elseif game.PlaceId == 6872265039 then
-    local Tab = Window:Tab({Title = "[36] BedWars", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[36] BedWars",
+        Desc = "Scripts for BedWars",
+        Icon = "bed",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Blocks", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Break Bed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -493,9 +757,19 @@ elseif game.PlaceId == 6872265039 then
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 38. Pls Donate
+-- 37. Pls Donate
 elseif game.PlaceId == 8737602449 then
-    local Tab = Window:Tab({Title = "[37] Pls Donate", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[37] Pls Donate",
+        Desc = "Scripts for Pls Donate",
+        Icon = "gift",
+        IconColor = Color3.fromHex("#00b06b"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Beg", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fake Robux Sign", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Thank", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -504,9 +778,19 @@ elseif game.PlaceId == 8737602449 then
     Tab:Button({Title = "Anti-AFK", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 39. Pet Simulator X
+-- 38. Pet Simulator X
 elseif game.PlaceId == 6284583030 then
-    local Tab = Window:Tab({Title = "[38] Pet Simulator X", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[38] Pet Simulator X",
+        Desc = "Scripts for Pet Simulator X",
+        Icon = "paw-print",
+        IconColor = Color3.fromHex("#ff7700"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hatch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Collect Loot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -515,9 +799,19 @@ elseif game.PlaceId == 6284583030 then
     Tab:Button({Title = "Anti-AFK", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 40. Natural Disaster Survival
+-- 39. Natural Disaster Survival
 elseif game.PlaceId == 189707 then
-    local Tab = Window:Tab({Title = "[39] Natural Disaster", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[39] Natural Disaster",
+        Desc = "Scripts for Natural Disaster Survival",
+        Icon = "cloud-lightning",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walk on Water", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Win/Survive", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -526,9 +820,19 @@ elseif game.PlaceId == 189707 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Speed Boost", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 41. Vehicle Simulator
+-- 40. Vehicle Simulator
 elseif game.PlaceId == 171391004 then
-    local Tab = Window:Tab({Title = "[40] Vehicle Simulator", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[40] Vehicle Simulator",
+        Desc = "Scripts for Vehicle Simulator",
+        Icon = "car",
+        IconColor = Color3.fromHex("#3498db"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Drive", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Money", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Cars", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -537,9 +841,19 @@ elseif game.PlaceId == 171391004 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 42. Theme Park Tycoon 2
+-- 41. Theme Park Tycoon 2
 elseif game.PlaceId == 69184822 then
-    local Tab = Window:Tab({Title = "[41] Theme Park Tycoon 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[41] Theme Park Tycoon 2",
+        Desc = "Scripts for Theme Park Tycoon 2",
+        Icon = "ferris-wheel",
+        IconColor = Color3.fromHex("#e91e63"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Collect Money", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Rides", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Free Build Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -548,9 +862,19 @@ elseif game.PlaceId == 69184822 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport to Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 43. Work at a Pizza Place
+-- 42. Work at a Pizza Place
 elseif game.PlaceId == 192800 then
-    local Tab = Window:Tab({Title = "[42] Pizza Place", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[42] Pizza Place",
+        Desc = "Scripts for Work at a Pizza Place",
+        Icon = "utensils",
+        IconColor = Color3.fromHex("#ff6600"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Manager", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Cashier", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Cook", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -559,9 +883,19 @@ elseif game.PlaceId == 192800 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 44. Hide and Seek Extreme
+-- 43. Hide and Seek Extreme
 elseif game.PlaceId == 205224386 then
-    local Tab = Window:Tab({Title = "[43] Hide and Seek", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[43] Hide and Seek",
+        Desc = "Scripts for Hide and Seek Extreme",
+        Icon = "eye-off",
+        IconColor = Color3.fromHex("#27ae60"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Win", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -570,9 +904,19 @@ elseif game.PlaceId == 205224386 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 45. Driving Empire
+-- 44. Driving Empire
 elseif game.PlaceId == 3351674303 then
-    local Tab = Window:Tab({Title = "[44] Driving Empire", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[44] Driving Empire",
+        Desc = "Scripts for Driving Empire",
+        Icon = "car",
+        IconColor = Color3.fromHex("#c0392b"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Miles", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Cars", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Money", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -581,9 +925,19 @@ elseif game.PlaceId == 3351674303 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 46. Combat Warriors
+-- 45. Combat Warriors
 elseif game.PlaceId == 4282985734 then
-    local Tab = Window:Tab({Title = "[45] Combat Warriors", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[45] Combat Warriors",
+        Desc = "Scripts for Combat Warriors",
+        Icon = "swords",
+        IconColor = Color3.fromHex("#8e1a1a"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Hitbox Expander", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Stamina", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -592,9 +946,19 @@ elseif game.PlaceId == 4282985734 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 47. Mad City
+-- 46. Mad City
 elseif game.PlaceId == 1224212277 then
-    local Tab = Window:Tab({Title = "[46] Mad City", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[46] Mad City",
+        Desc = "Scripts for Mad City",
+        Icon = "shield",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Rob", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite XP", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -603,9 +967,19 @@ elseif game.PlaceId == 1224212277 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "No Clip", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 48. Break In Story
+-- 47. Break In
 elseif game.PlaceId == 3851622790 then
-    local Tab = Window:Tab({Title = "[47] Break In", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[47] Break In",
+        Desc = "Scripts for Break In Story",
+        Icon = "home",
+        IconColor = Color3.fromHex("#95a5a6"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Get All Items", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Heal", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -614,9 +988,19 @@ elseif game.PlaceId == 3851622790 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 49. Tower of Hell
+-- 48. Tower of Hell
 elseif game.PlaceId == 1962086868 then
-    local Tab = Window:Tab({Title = "[48] Tower of Hell", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[48] Tower of Hell",
+        Desc = "Scripts for Tower of Hell",
+        Icon = "flame",
+        IconColor = Color3.fromHex("#ff4500"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport to Top", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Give All Gears", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -625,9 +1009,19 @@ elseif game.PlaceId == 1962086868 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 50. Lumber Tycoon 2
+-- 49. Lumber Tycoon 2
 elseif game.PlaceId == 13822889 then
-    local Tab = Window:Tab({Title = "[49] Lumber Tycoon 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[49] Lumber Tycoon 2",
+        Desc = "Scripts for Lumber Tycoon 2",
+        Icon = "tree-pine",
+        IconColor = Color3.fromHex("#27ae60"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Wood", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Bring All Trees", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Money", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -636,9 +1030,19 @@ elseif game.PlaceId == 13822889 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 51. Piggy
+-- 50. Piggy
 elseif game.PlaceId == 4623386862 then
-    local Tab = Window:Tab({Title = "[50] Piggy", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[50] Piggy",
+        Desc = "Scripts for Piggy",
+        Icon = "skull",
+        IconColor = Color3.fromHex("#ff69b4"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Escape", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Piggy/Items", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -647,9 +1051,19 @@ elseif game.PlaceId == 4623386862 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 52. Tower Defense Simulator
+-- 51. Tower Defense Simulator
 elseif game.PlaceId == 3260590327 then
-    local Tab = Window:Tab({Title = "[51] TDS", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[51] TDS",
+        Desc = "Scripts for Tower Defense Simulator",
+        Icon = "shield",
+        IconColor = Color3.fromHex("#2980b9"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Place Troops", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Upgrade", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -658,9 +1072,19 @@ elseif game.PlaceId == 3260590327 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 53. MeepCity
+-- 52. MeepCity
 elseif game.PlaceId == 370731277 then
-    local Tab = Window:Tab({Title = "[52] MeepCity", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[52] MeepCity",
+        Desc = "Scripts for MeepCity",
+        Icon = "users",
+        IconColor = Color3.fromHex("#3498db"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock Plus", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Furniture", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -669,9 +1093,19 @@ elseif game.PlaceId == 370731277 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 54. Anime Dimensions
+-- 53. Anime Dimensions
 elseif game.PlaceId == 6938803436 then
-    local Tab = Window:Tab({Title = "[53] Anime Dimensions", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[53] Anime Dimensions",
+        Desc = "Scripts for Anime Dimensions",
+        Icon = "swords",
+        IconColor = Color3.fromHex("#9b59b6"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Raid", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Attack", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Dodge", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -680,9 +1114,19 @@ elseif game.PlaceId == 6938803436 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 55. Fruits Battlegrounds
+-- 54. Fruits Battlegrounds
 elseif game.PlaceId == 10449761463 then
-    local Tab = Window:Tab({Title = "[54] Fruits Battle", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[54] Fruits Battle",
+        Desc = "Scripts for Fruits Battlegrounds",
+        Icon = "zap",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Levels", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Spin Fruits", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Fruits", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -691,9 +1135,19 @@ elseif game.PlaceId == 10449761463 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 58. Evade
+-- 55. Evade (duplicate)
 elseif game.PlaceId == 9872472334 then
-    local Tab = Window:Tab({Title = "[55] Evade", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[55] Evade",
+        Desc = "Scripts for Evade",
+        Icon = "zap",
+        IconColor = Color3.fromHex("#39ff14"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Nextbots", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Revive", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Tokens", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -701,10 +1155,20 @@ elseif game.PlaceId == 9872472334 then
     Tab:Button({Title = "Teleport to Safezone", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
-    
--- 62. SCP: Roleplay
+
+-- 56. SCP: Roleplay
 elseif game.PlaceId == 5041144419 then
-    local Tab = Window:Tab({Title = "[56] SCP: Roleplay", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[56] SCP: Roleplay",
+        Desc = "Scripts for SCP: Roleplay",
+        Icon = "alert-triangle",
+        IconColor = Color3.fromHex("#f39c12"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Breach", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP SCPs/Guards", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -713,9 +1177,19 @@ elseif game.PlaceId == 5041144419 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 63. Phantom Forces
+-- 57. Phantom Forces
 elseif game.PlaceId == 292439477 then
-    local Tab = Window:Tab({Title = "[57] Phantom Forces", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[57] Phantom Forces",
+        Desc = "Scripts for Phantom Forces",
+        Icon = "crosshair",
+        IconColor = Color3.fromHex("#2c3e50"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP All", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "No Recoil", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -724,9 +1198,19 @@ elseif game.PlaceId == 292439477 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 64. Bloxburg
+-- 58. Bloxburg
 elseif game.PlaceId == 185655149 then
-    local Tab = Window:Tab({Title = "[58] Bloxburg", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[58] Bloxburg",
+        Desc = "Scripts for Bloxburg",
+        Icon = "home",
+        IconColor = Color3.fromHex("#f1c40f"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Pizza", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Build", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Max Moods", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -735,9 +1219,19 @@ elseif game.PlaceId == 185655149 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 65. Islands
+-- 59. Islands
 elseif game.PlaceId == 4872321990 then
-    local Tab = Window:Tab({Title = "[59]Islands", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[59] Islands",
+        Desc = "Scripts for Islands",
+        Icon = "island",
+        IconColor = Color3.fromHex("#1abc9c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Crops", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Mine Ores", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Ores/Mobs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -746,9 +1240,19 @@ elseif game.PlaceId == 4872321990 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 66. Ninja Legends
+-- 60. Ninja Legends
 elseif game.PlaceId == 3956818381 then
-    local Tab = Window:Tab({Title = "[60] Ninja Legends", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[60] Ninja Legends",
+        Desc = "Scripts for Ninja Legends",
+        Icon = "wind",
+        IconColor = Color3.fromHex("#2ecc71"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Swing", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Sell", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Buy Swords", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -757,9 +1261,19 @@ elseif game.PlaceId == 3956818381 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 67. Epic Minigames
+-- 61. Epic Minigames
 elseif game.PlaceId == 277751860 then
-    local Tab = Window:Tab({Title = "[61] Epic Minigames", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[61] Epic Minigames",
+        Desc = "Scripts for Epic Minigames",
+        Icon = "gamepad-2",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Win Minigames", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -768,9 +1282,19 @@ elseif game.PlaceId == 277751860 then
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Anti-AFK", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 68. Muscle Legends
+-- 62. Muscle Legends
 elseif game.PlaceId == 3623096087 then
-    local Tab = Window:Tab({Title = "[62] Muscle Legends", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[62] Muscle Legends",
+        Desc = "Scripts for Muscle Legends",
+        Icon = "dumbbell",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Lift", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Brawl", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Rebirth", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -779,9 +1303,19 @@ elseif game.PlaceId == 3623096087 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 69. Ro-Ghoul
+-- 63. Ro-Ghoul
 elseif game.PlaceId == 914010731 then
-    local Tab = Window:Tab({Title = "[63] Ro-Ghoul", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[63] Ro-Ghoul",
+        Desc = "Scripts for Ro-Ghoul",
+        Icon = "skull",
+        IconColor = Color3.fromHex("#7f0000"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm C-G", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Boss", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Stats", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -790,9 +1324,19 @@ elseif game.PlaceId == 914010731 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Stamina", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 70. Bayside High School
+-- 64. Bayside High School
 elseif game.PlaceId == 628936314 then
-    local Tab = Window:Tab({Title = "[64] Bayside High", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[64] Bayside High",
+        Desc = "Scripts for Bayside High School",
+        Icon = "book",
+        IconColor = Color3.fromHex("#3498db"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Cash", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Get A+", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport Map", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -801,9 +1345,19 @@ elseif game.PlaceId == 628936314 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 71. Strongest Battlegrounds
+-- 65. Strongest Battlegrounds
 elseif game.PlaceId == 10449761463 then
-    local Tab = Window:Tab({Title = "[65] Strongest Battle", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[65] Strongest Battle",
+        Desc = "Scripts for Strongest Battlegrounds",
+        Icon = "zap",
+        IconColor = Color3.fromHex("#f39c12"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot Skills", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Block/Parry", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -812,9 +1366,19 @@ elseif game.PlaceId == 10449761463 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 72. Pet Catchers
+-- 66. Pet Catchers
 elseif game.PlaceId == 16510723659 then
-    local Tab = Window:Tab({Title = "[66] Pet Catchers", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[66] Pet Catchers",
+        Desc = "Scripts for Pet Catchers",
+        Icon = "paw-print",
+        IconColor = Color3.fromHex("#e67e22"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Catch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hatch", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -823,9 +1387,19 @@ elseif game.PlaceId == 16510723659 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 73. Restaurant Tycoon 2
+-- 67. Restaurant Tycoon 2
 elseif game.PlaceId == 3398014311 then
-    local Tab = Window:Tab({Title = "[67] Restaurant Tycoon", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[67] Restaurant Tycoon",
+        Desc = "Scripts for Restaurant Tycoon 2",
+        Icon = "utensils",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Collect Cash", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Cook", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Serve", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -834,9 +1408,19 @@ elseif game.PlaceId == 3398014311 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 74. Weapon Fighting Simulator
+-- 68. Weapon Fighting Simulator
 elseif game.PlaceId == 8554378337 then
-    local Tab = Window:Tab({Title = "[68] Weapon Fighting", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[68] Weapon Fighting",
+        Desc = "Scripts for Weapon Fighting Simulator",
+        Icon = "sword",
+        IconColor = Color3.fromHex("#c0392b"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Attack", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Equip Best", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Open Swords", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -845,9 +1429,19 @@ elseif game.PlaceId == 8554378337 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 75. Obby Creator
+-- 69. Obby Creator
 elseif game.PlaceId == 2913303231 then
-    local Tab = Window:Tab({Title = "[69] Obby Creator", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[69] Obby Creator",
+        Desc = "Scripts for Obby Creator",
+        Icon = "blocks",
+        IconColor = Color3.fromHex("#27ae60"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Give Max Cash", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Props", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Copy Any Obby", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -856,9 +1450,19 @@ elseif game.PlaceId == 2913303231 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 76. RoCitizens
+-- 70. RoCitizens
 elseif game.PlaceId == 137877687 then
-    local Tab = Window:Tab({Title = "[70] RoCitizens", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[70] RoCitizens",
+        Desc = "Scripts for RoCitizens",
+        Icon = "building",
+        IconColor = Color3.fromHex("#3498db"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Jobs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Collect Cash", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport to Stores", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -867,9 +1471,19 @@ elseif game.PlaceId == 137877687 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 77. Royale High
+-- 71. Royale High
 elseif game.PlaceId == 735030788 then
-    local Tab = Window:Tab({Title = "[71] Royale High", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[71] Royale High",
+        Desc = "Scripts for Royale High",
+        Icon = "crown",
+        IconColor = Color3.fromHex("#e91e63"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Diamonds", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Win Pageant", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport to Realms", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -878,9 +1492,19 @@ elseif game.PlaceId == 735030788 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 78. Miner's Haven
+-- 72. Miner's Haven
 elseif game.PlaceId == 258068334 then
-    local Tab = Window:Tab({Title = "[72] Miner's Haven", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[72] Miner's Haven",
+        Desc = "Scripts for Miner's Haven",
+        Icon = "pickaxe",
+        IconColor = Color3.fromHex("#7f8c8d"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Ore Crate", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Rebirth", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Teleport to Boxes", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -889,9 +1513,19 @@ elseif game.PlaceId == 258068334 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 79. My Restaurant
+-- 73. My Restaurant
 elseif game.PlaceId == 4490140733 then
-    local Tab = Window:Tab({Title = "[73] My Restaurant", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[73] My Restaurant",
+        Desc = "Scripts for My Restaurant",
+        Icon = "utensils",
+        IconColor = Color3.fromHex("#e67e22"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Serve Customers", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Cook", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Instant VIPs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -900,9 +1534,19 @@ elseif game.PlaceId == 4490140733 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 80. Deepwoken
+-- 74. Deepwoken
 elseif game.PlaceId == 4111023553 then
-    local Tab = Window:Tab({Title = "[74] Deepwoken", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[74] Deepwoken",
+        Desc = "Scripts for Deepwoken",
+        Icon = "anchor",
+        IconColor = Color3.fromHex("#1a5276"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Parry", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players/Mobs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Aimbot Magic", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -911,9 +1555,19 @@ elseif game.PlaceId == 4111023553 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 81. Grand Piece Online
+-- 75. Grand Piece Online
 elseif game.PlaceId == 1730877806 then
-    local Tab = Window:Tab({Title = "[75] Grand Piece", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[75] Grand Piece",
+        Desc = "Scripts for Grand Piece Online",
+        Icon = "anchor",
+        IconColor = Color3.fromHex("#2980b9"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Quest", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Devil Fruits", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Block", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -922,9 +1576,19 @@ elseif game.PlaceId == 1730877806 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 82. Your Bizarre Adventure
+-- 76. YBA
 elseif game.PlaceId == 2809202155 then
-    local Tab = Window:Tab({Title = "[76] YBA", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[76] YBA",
+        Desc = "Scripts for Your Bizarre Adventure",
+        Icon = "star",
+        IconColor = Color3.fromHex("#9b59b6"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Mobs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Items/Rokas", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Parry", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -933,9 +1597,19 @@ elseif game.PlaceId == 2809202155 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 83. Vampire Hunters 3
+-- 77. Vampire Hunters 3
 elseif game.PlaceId == 5246796337 then
-    local Tab = Window:Tab({Title = "[77] Vampire Hunters 3", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[77] Vampire Hunters 3",
+        Desc = "Scripts for Vampire Hunters 3",
+        Icon = "moon",
+        IconColor = Color3.fromHex("#8e0000"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Roles", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Bite", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -944,9 +1618,19 @@ elseif game.PlaceId == 5246796337 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 84. Treasure Quest
+-- 78. Treasure Quest
 elseif game.PlaceId == 2984033785 then
-    local Tab = Window:Tab({Title = "[78] Treasure Quest", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[78] Treasure Quest",
+        Desc = "Scripts for Treasure Quest",
+        Icon = "gem",
+        IconColor = Color3.fromHex("#f1c40f"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Dungeon", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Loot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -955,9 +1639,19 @@ elseif game.PlaceId == 2984033785 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 85. Tower Battles
+-- 79. Tower Battles
 elseif game.PlaceId == 45146873 then
-    local Tab = Window:Tab({Title = "[79] Tower Battles", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[79] Tower Battles",
+        Desc = "Scripts for Tower Battles",
+        Icon = "shield",
+        IconColor = Color3.fromHex("#2ecc71"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Place Towers", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Upgrade", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Zombies", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -966,9 +1660,19 @@ elseif game.PlaceId == 45146873 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 86. Scuba Diving at Quill Lake
+-- 80. Scuba Diving at Quill Lake
 elseif game.PlaceId == 35397735 then
-    local Tab = Window:Tab({Title = "[80] Quill Lake", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[80] Quill Lake",
+        Desc = "Scripts for Scuba Diving at Quill Lake",
+        Icon = "droplets",
+        IconColor = Color3.fromHex("#1a8cff"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Infinite Air", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Artifacts", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Collect Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -977,9 +1681,19 @@ elseif game.PlaceId == 35397735 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 87. Retail Tycoon 2
+-- 81. Retail Tycoon 2
 elseif game.PlaceId == 5865858426 then
-    local Tab = Window:Tab({Title = "[81] Retail Tycoon 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[81] Retail Tycoon 2",
+        Desc = "Scripts for Retail Tycoon 2",
+        Icon = "shopping-cart",
+        IconColor = Color3.fromHex("#2980b9"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Restock", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Checkout", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Instant Deliveries", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -988,9 +1702,19 @@ elseif game.PlaceId == 5865858426 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 88. Wacky Wizards
+-- 82. Wacky Wizards
 elseif game.PlaceId == 7301598175 then
-    local Tab = Window:Tab({Title = "[82] Wacky Wizards", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[82] Wacky Wizards",
+        Desc = "Scripts for Wacky Wizards",
+        Icon = "wand",
+        IconColor = Color3.fromHex("#8e44ad"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Collect Ingredients", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Cauldrons", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Ingredients", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -999,9 +1723,19 @@ elseif game.PlaceId == 7301598175 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 89. Sonic Speed Simulator
+-- 83. Sonic Speed Simulator
 elseif game.PlaceId == 9049840490 then
-    local Tab = Window:Tab({Title = "[83] Sonic Speed Sim", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[83] Sonic Speed Sim",
+        Desc = "Scripts for Sonic Speed Simulator",
+        Icon = "zap",
+        IconColor = Color3.fromHex("#1565c0"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Collect Rings", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Rebirth", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Spin Wheels", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1010,9 +1744,19 @@ elseif game.PlaceId == 9049840490 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 90. Bad Business
+-- 84. Bad Business
 elseif game.PlaceId == 3233893879 then
-    local Tab = Window:Tab({Title = "[84] Bad Business", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[84] Bad Business",
+        Desc = "Scripts for Bad Business",
+        Icon = "crosshair",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "No Recoil", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1021,9 +1765,19 @@ elseif game.PlaceId == 3233893879 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 91. Anime Adventures
+-- 85. Anime Adventures
 elseif game.PlaceId == 8304191830 then
-    local Tab = Window:Tab({Title = "[85] Anime Adventures", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[85] Anime Adventures",
+        Desc = "Scripts for Anime Adventures",
+        Icon = "swords",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Play Levels", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Place Units", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Upgrade", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1032,9 +1786,19 @@ elseif game.PlaceId == 8304191830 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 92. All Star Tower Defense
+-- 86. All Star Tower Defense
 elseif game.PlaceId == 4996049426 then
-    local Tab = Window:Tab({Title = "[86] ASTD", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[86] ASTD",
+        Desc = "Scripts for All Star Tower Defense",
+        Icon = "shield",
+        IconColor = Color3.fromHex("#f39c12"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Story", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Infinite", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Upgrade Troops", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1043,9 +1807,19 @@ elseif game.PlaceId == 4996049426 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 93. Bubble Gum Simulator
+-- 87. Bubble Gum Simulator
 elseif game.PlaceId == 2512643572 then
-    local Tab = Window:Tab({Title = "[87] Bubble Gum Sim", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[87] Bubble Gum Sim",
+        Desc = "Scripts for Bubble Gum Simulator",
+        Icon = "circle",
+        IconColor = Color3.fromHex("#ff69b4"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Blow Bubbles", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Sell", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hatch Eggs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1054,9 +1828,19 @@ elseif game.PlaceId == 2512643572 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 94. Prison Life
+-- 88. Prison Life
 elseif game.PlaceId == 155615604 then
-    local Tab = Window:Tab({Title = "[88] Prison Life", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[88] Prison Life",
+        Desc = "Scripts for Prison Life",
+        Icon = "lock",
+        IconColor = Color3.fromHex("#7f8c8d"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Give Weapons", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1065,9 +1849,19 @@ elseif game.PlaceId == 155615604 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 95. Survive The Disasters
+-- 89. Survive The Disasters
 elseif game.PlaceId == 18540115 then
-    local Tab = Window:Tab({Title = "[89] Survive Disasters", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[89] Survive Disasters",
+        Desc = "Scripts for Survive The Disasters",
+        Icon = "cloud-lightning",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "God Mode", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Survive", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Safe Zones", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1076,9 +1870,19 @@ elseif game.PlaceId == 18540115 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 96. Super Golf!
+-- 90. Super Golf!
 elseif game.PlaceId == 4468644573 then
-    local Tab = Window:Tab({Title = "[90] Super Golf!", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[90] Super Golf!",
+        Desc = "Scripts for Super Golf!",
+        Icon = "circle-dot",
+        IconColor = Color3.fromHex("#27ae60"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Hole in One", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Max Power Hit", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Holes/Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1087,9 +1891,19 @@ elseif game.PlaceId == 4468644573 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 97. Flee the Facility
+-- 91. Flee the Facility
 elseif game.PlaceId == 893973440 then
-    local Tab = Window:Tab({Title = "[91] Flee the Facility", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[91] Flee the Facility",
+        Desc = "Scripts for Flee the Facility",
+        Icon = "door-open",
+        IconColor = Color3.fromHex("#1abc9c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Beast/Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP PCs/Exits", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hack PC", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1098,9 +1912,19 @@ elseif game.PlaceId == 893973440 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 98. SharkBite 2
+-- 92. SharkBite 2
 elseif game.PlaceId == 8908228901 then
-    local Tab = Window:Tab({Title = "[92] SharkBite 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[92] SharkBite 2",
+        Desc = "Scripts for SharkBite 2",
+        Icon = "waves",
+        IconColor = Color3.fromHex("#1565c0"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Kill Shark", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Kill Players (Shark)", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Shark/Boats", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1109,9 +1933,19 @@ elseif game.PlaceId == 8908228901 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 99. The Wild West
+-- 93. The Wild West
 elseif game.PlaceId == 2317712696 then
-    local Tab = Window:Tab({Title = "[93] The Wild West", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[93] The Wild West",
+        Desc = "Scripts for The Wild West",
+        Icon = "sun",
+        IconColor = Color3.fromHex("#d4a843"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players/Ores", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Mine", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1120,9 +1954,19 @@ elseif game.PlaceId == 2317712696 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 100. Creatures of Sonaria
+-- 94. Creatures of Sonaria
 elseif game.PlaceId == 5233782396 then
-    local Tab = Window:Tab({Title = "[94] Creatures of Sonaria", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[94] Creatures of Sonaria",
+        Desc = "Scripts for Creatures of Sonaria",
+        Icon = "paw-print",
+        IconColor = Color3.fromHex("#16a085"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Farm Mushrooms", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Eat/Drink", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players/Food", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1131,9 +1975,19 @@ elseif game.PlaceId == 5233782396 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 101. SCP-3008
+-- 95. SCP-3008
 elseif game.PlaceId == 2768379856 then
-    local Tab = Window:Tab({Title = "[95] SCP-3008", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[95] SCP-3008",
+        Desc = "Scripts for SCP-3008",
+        Icon = "alert-triangle",
+        IconColor = Color3.fromHex("#f39c12"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Items/Food", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Employees", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Energy", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1142,9 +1996,19 @@ elseif game.PlaceId == 2768379856 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 102. RoBeats
+-- 96. Custom PC Tycoon (RoBeats PlaceId)
 elseif game.PlaceId == 6442957604 then
-    local Tab = Window:Tab({Title = "[96] Custom Pc Tycoon", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[96] Custom PC Tycoon",
+        Desc = "Scripts for Custom PC Tycoon",
+        Icon = "monitor",
+        IconColor = Color3.fromHex("#3498db"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Player (Perfect)", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Unlock All Songs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Coins", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1153,9 +2017,19 @@ elseif game.PlaceId == 6442957604 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 103. Dungeon Quest
+-- 97. Dungeon Quest
 elseif game.PlaceId == 2414851778 then
-    local Tab = Window:Tab({Title = "[97] Dungeon Quest", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[97] Dungeon Quest",
+        Desc = "Scripts for Dungeon Quest",
+        Icon = "sword",
+        IconColor = Color3.fromHex("#8e44ad"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Dungeon", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Sell Loot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1164,9 +2038,19 @@ elseif game.PlaceId == 2414851778 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 104. Mining Simulator 2
+-- 98. Mining Simulator 2
 elseif game.PlaceId == 9551640993 then
-    local Tab = Window:Tab({Title = "[98] Mining Sim 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[98] Mining Sim 2",
+        Desc = "Scripts for Mining Simulator 2",
+        Icon = "pickaxe",
+        IconColor = Color3.fromHex("#7f8c8d"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Mine", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Sell Ores", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Hatch Eggs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1175,9 +2059,19 @@ elseif game.PlaceId == 9551640993 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Jump", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 105. Frontlines
+-- 99. Frontlines
 elseif game.PlaceId == 5938036553 then
-    local Tab = Window:Tab({Title = "[99] Frontlines", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[99] Frontlines",
+        Desc = "Scripts for Frontlines",
+        Icon = "crosshair",
+        IconColor = Color3.fromHex("#2c3e50"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Players", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "No Recoil", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1186,9 +2080,19 @@ elseif game.PlaceId == 5938036553 then
     Tab:Button({Title = "Walkspeed", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Fly", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
--- 106. Apeirophobia
+-- 100. Apeirophobia
 elseif game.PlaceId == 10277607801 then
-    local Tab = Window:Tab({Title = "[100] Apeirophobia", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[100] Apeirophobia",
+        Desc = "Scripts for Apeirophobia",
+        Icon = "eye",
+        IconColor = Color3.fromHex("#1a1a2e"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "ESP Entities", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "ESP Exits/Items", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Solve Puzzles", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1199,7 +2103,17 @@ elseif game.PlaceId == 10277607801 then
 
 -- 101. Sword Burst 2
 elseif game.PlaceId == 659222129 then
-    local Tab = Window:Tab({Title = "[101] Sword Burst 2", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[101] Sword Burst 2",
+        Desc = "Scripts for Sword Burst 2",
+        Icon = "sword",
+        IconColor = Color3.fromHex("#3498db"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Kill Aura", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Farm Mobs", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Auto Loot", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1210,7 +2124,17 @@ elseif game.PlaceId == 659222129 then
 
 -- 102. Project Lazarus
 elseif game.PlaceId == 443406476 then
-    local Tab = Window:Tab({Title = "[102] Project Lazarus", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[102] Project Lazarus",
+        Desc = "Scripts for Project Lazarus",
+        Icon = "skull",
+        IconColor = Color3.fromHex("#8e0000"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Aimbot Zombies", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Points", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Ammo", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
@@ -1221,7 +2145,17 @@ elseif game.PlaceId == 443406476 then
 
 -- 103. Midnight Racing: Tokyo
 elseif game.PlaceId == 3339374541 then
-    local Tab = Window:Tab({Title = "[103] Midnight Racing", Icon = "code", Locked = false})
+    local Tab = Window:Tab({
+        Title = "[103] Midnight Racing",
+        Desc = "Scripts for Midnight Racing: Tokyo",
+        Icon = "car",
+        IconColor = Color3.fromHex("#e74c3c"),
+        IconShape = "Square",
+        IconThemed = true,
+        Locked = false,
+        ShowTabTitle = false,
+        Border = true,
+    })
     Tab:Button({Title = "Auto Race Win", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Max Acceleration", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
     Tab:Button({Title = "Infinite Yen", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
