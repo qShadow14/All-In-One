@@ -65,8 +65,8 @@ local LocalPlayer = Players.LocalPlayer
 local userId = LocalPlayer.UserId
 local role = PlayerRoles[userId] or "User"
 
-StarterGui:SetCore("SendNotification", {
-    Title = "Role Detected",
-    Text = "You are: " .. role,
-    Duration = 6,
+WindUI:Notify({
+    Title = "Welcome",
+    Content = "You are:" .. role,
+    Duration = 5
 })
