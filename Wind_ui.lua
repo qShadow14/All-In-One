@@ -12185,21 +12185,21 @@ Name="Frame",
 })
 
 function createAuthor(m)
-    return am("TextLabel",{
-        Text=m,
-        FontFace=Font.new(al.Font,Enum.FontWeight.Medium),
-        BackgroundTransparency=1,
-        TextTransparency=0.35,
-        AutomaticSize="XY",
-        Parent=au.UIElements.Main and au.UIElements.Main.Main.Topbar.Left.Title,
-        TextXAlignment="Left",
-        TextSize=13,
-        LayoutOrder=2,
-        ThemeTag={
-            TextColor3="WindowTopbarAuthor",
-        },
-        Name="Author",
-    })
+return am("TextLabel",{
+Text=m,
+FontFace=Font.new(al.Font,Enum.FontWeight.Medium),
+BackgroundTransparency=1,
+TextTransparency=0.35,
+AutomaticSize="XY",
+Parent=au.UIElements.Main and au.UIElements.Main.Main.Topbar.Left.Title,
+TextXAlignment="Left",
+TextSize=13,
+LayoutOrder=2,
+ThemeTag={
+TextColor3="WindowTopbarAuthor",
+},
+Name="Author",
+})
 end
 
 local m
@@ -12207,113 +12207,91 @@ local p
 
 -- Create Author label if it exists
 if au.Author then
-    m = createAuthor(au.Author)
+m = createAuthor(au.Author)
 end
 
 -- Create the Title label
 local r = am("TextLabel", {
-    Text = au.Title,
-    FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
-    BackgroundTransparency = 1,
-    AutomaticSize = "XY",
-    Name = "Title",
-    TextXAlignment = "Left",
-    TextSize = 16,
-    ThemeTag = {
-        TextColor3 = "WindowTopbarTitle",
-    },
+Text = au.Title,
+FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
+BackgroundTransparency = 1,
+AutomaticSize = "XY",
+Name = "Title",
+TextXAlignment = "Left",
+TextSize = 16,
+ThemeTag = {
+TextColor3 = "WindowTopbarTitle",
+},
 })
 
+-- NEW: Expose TitleLabel so you can modify it later
+au.TitleLabel = r
+
+-- ==================== TITLE POSITIONING ====================
+-- If you want to move the title to a custom position (e.g. 200 pixels from left)
+if au.TitlePosition then
+r.Position = au.TitlePosition
+r.AnchorPoint = Vector2.new(0, 0.5)   -- Center vertically
+r.ZIndex = 100
+end
 -- ===========================================================
--- Create the Main frame FIRST
+
 au.UIElements.Main = am("Frame", {
-    Size = au.Size,
-    Position = au.Position,
-    BackgroundTransparency = 1,
-    Parent = at.Parent,
-    AnchorPoint = Vector2.new(0.5, 0.5),
-    Active = true,
+Size = au.Size,
+Position = au.Position,
+BackgroundTransparency = 1,
+Parent = at.Parent,
+AnchorPoint = Vector2.new(0.5, 0.5),
+Active = true,
 }, {
-    at.WindUI.UIScaleObj,
-    au.AcrylicPaint and au.AcrylicPaint.Frame or nil,
-    aA,
-    al.NewRoundFrame(au.UICorner, "Squircle", {
-        ImageTransparency = 1,
-        Size = UDim2.new(1, 0, 1, -240),
-        AnchorPoint = Vector2.new(0.5, 0.5),
-        Position = UDim2.new(0.5, 0, 0.5, 0),
-        Name = "Background",
-        ThemeTag = {
-            ImageColor3 = "WindowBackground",
-        },
-    }, {
-        g,
-        l,
-        ax,
-    }),
-    aw,
-    ay,
-    az,
-    am("Frame",{
-        Size=UDim2.new(1,0,1,0),
-        BackgroundTransparency=1,
-        Name="Main",
-        Visible=false,
-        ZIndex=97,
-    },{
-        am("UICorner",{
-            CornerRadius=UDim.new(0,au.UICorner),
-        }),
-        au.UIElements.SideBarContainer,
-        au.UIElements.MainBar,
-        aB,
-        d,
-        am("Frame",{
-            Size=UDim2.new(1,0,0,au.Topbar.Height),
-            BackgroundTransparency=1,
-            BackgroundColor3=Color3.fromRGB(50,50,50),
-            Name="Topbar",
-        },{
-            b,
-            -- ... rest of your Topbar content continues here ...
-        })
-    })
-})
+at.WindUI.UIScaleObj,
+au.AcrylicPaint and au.AcrylicPaint.Frame or nil,
+aA,
+al.NewRoundFrame(au.UICorner, "Squircle", {
+ImageTransparency = 1,
+Size = UDim2.new(1, 0, 1, -240),
+AnchorPoint = Vector2.new(0.5, 0.5),
+Position = UDim2.new(0.5, 0, 0.5, 0),
+Name = "Background",
+ThemeTag = {
+ImageColor3 = "WindowBackground",
+},
+}, {
+g,
+l,
+ax,
 
--- ==================== PERMANENT TITLE POSITION - SAFE VERSION ====================
--- This runs AFTER the UI is fully built
-task.spawn(function()
-    -- Wait until everything is ready
-    repeat task.wait(0.1) until au and au.UIElements and au.UIElements.Main 
-        and au.UIElements.Main.Main and au.UIElements.Main.Main.Topbar
 
-    local leftContainer = au.UIElements.Main.Main.Topbar.Left
-    if not leftContainer then return end
 
-    -- Save reference
-    au.TitleLabel = r
-    if ao.Window then 
-        ao.Window.TitleLabel = r 
-    end
+}),
 
-    if ao.TitlePosition then
-        r.Parent = leftContainer
-        r.Position = ao.TitlePosition
-        r.AnchorPoint = Vector2.new(0, 0.5)
-        r.ZIndex = 100
-        r.LayoutOrder = 999
+aw,
+ay,
+az,
+am("Frame",{
+Size=UDim2.new(1,0,1,0),
+BackgroundTransparency=1,
+Name="Main",
 
-        -- Disable all layouts that try to move it
-        local list = leftContainer:FindFirstChildOfClass("UIListLayout")
-        if list then list.Enabled = false end
+Visible=false,
+ZIndex=97,
+},{
+am("UICorner",{
+CornerRadius=UDim.new(0,au.UICorner),
+}),
+au.UIElements.SideBarContainer,
+au.UIElements.MainBar,
 
-        local titleFrame = leftContainer:FindFirstChild("Title")
-        if titleFrame then
-            local innerList = titleFrame:FindFirstChildOfClass("UIListLayout")
-            if innerList then innerList.Enabled = false end
-        end
-    end
-end)
+aB,
+
+d,
+am("Frame",{
+Size=UDim2.new(1,0,0,au.Topbar.Height),
+BackgroundTransparency=1,
+BackgroundColor3=Color3.fromRGB(50,50,50),
+Name="Topbar",
+},{
+b,
 
 
 
