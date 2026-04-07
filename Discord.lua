@@ -1,6 +1,6 @@
 local Tab = Window:Tab({
     Title = "Discord & Support",
-    Desc = "", -- optional
+    Desc = "Discord Server link", -- optional
     Icon = "play", -- lucide icon or "rbxassetid://" or URL. optional
     IconColor = Color3.fromHex("#040e92"), -- custom icon color. optional
     IconShape = "Square", -- "Square" or "Circle". optional
