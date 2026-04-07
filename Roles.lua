@@ -56,17 +56,15 @@ local PlayerRoles = {
 }
 
 -- ================================================
--- GET PLAYER ROLE & SEND NOTIFICATION
+-- GET PLAYER ROLE & SEND WINDUI NOTIFICATION
 -- ================================================
 local Players = game:GetService("Players")
-local StarterGui = game:GetService("StarterGui")
-
 local LocalPlayer = Players.LocalPlayer
 local userId = LocalPlayer.UserId
 local role = PlayerRoles[userId] or "User"
 
 WindUI:Notify({
-    Title = "Welcome",
-    Content = "You are:" .. role,
-    Duration = 5
+    Title = "Role Detected",
+    Content = "You are: " .. role,
+    Duration = 3
 })
