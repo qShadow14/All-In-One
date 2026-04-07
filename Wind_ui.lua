@@ -266,7 +266,7 @@ WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
 
-TitlePosition = nil,
+TitlePosition = UDim2.new(0, 250, 0.5, 0),
 
 WindowSearchBarBackground="Background",
 
@@ -12224,30 +12224,28 @@ local r = am("TextLabel", {
     },
 })
 
--- ==================== CUSTOM TITLE POSITION SUPPORT ====================
-au.TitleLabel = r   -- Save reference so we can move it
-
-if au.TitlePosition then
-    -- Move the title to wherever you want
-    r.Parent = au.UIElements.Main.Main.Topbar.Left
-    r.Position = au.TitlePosition
-    r.AnchorPoint = Vector2.new(0, 0.5)   -- vertically centered
-    r.ZIndex = 100
-    r.LayoutOrder = 999                   -- prevent list layout from moving it
-else
-    -- Original behavior (put it back in the title container)
-    r.Parent = au.UIElements.Main.Main.Topbar.Left.Title or au.UIElements.Main.Main.Topbar.Left
-end
-
--- NEW: Expose TitleLabel so you can modify it later
+-- ==================== PERMANENT TITLE POSITION ====================
 au.TitleLabel = r
 
--- ==================== TITLE POSITIONING ====================
--- If you want to move the title to a custom position (e.g. 200 pixels from left)
-if au.TitlePosition then
-r.Position = au.TitlePosition
-r.AnchorPoint = Vector2.new(0, 0.5)   -- Center vertically
-r.ZIndex = 100
+-- Apply the permanent position from the theme table
+if ao.TitlePosition then   -- ao is the creator, it holds the theme
+    local leftContainer = au.UIElements.Main.Main.Topbar.Left
+
+    r.Parent = leftContainer
+    r.Position = ao.TitlePosition          -- use the permanent value
+    r.AnchorPoint = Vector2.new(0, 0.5)
+    r.ZIndex = 100
+    r.LayoutOrder = 999
+
+    -- Permanently disable layouts that move the title
+    local list = leftContainer:FindFirstChildOfClass("UIListLayout")
+    if list then list.Enabled = false end
+
+    local titleFrame = leftContainer:FindFirstChild("Title")
+    if titleFrame then
+        local innerList = titleFrame:FindFirstChildOfClass("UIListLayout")
+        if innerList then innerList.Enabled = false end
+    end
 end
 -- ===========================================================
 
