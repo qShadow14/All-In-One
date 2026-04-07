@@ -1,7 +1,13 @@
-local Tab = Window:Tab({
+local InfoTab = Window:Tab({
     Title = "Credits",
+    Desc = "Who helped with the script",
     Icon = "crown",
+    IconColor = Color3.fromHex("#ffe600"),
+    IconShape = "Square",
+    IconThemed = true,
     Locked = false,
+    ShowTabTitle = false,
+    Border = true,
 })
 
 Tab:Paragraph({
