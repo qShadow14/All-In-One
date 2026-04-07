@@ -12224,29 +12224,34 @@ local r = am("TextLabel", {
     },
 })
 
--- ==================== PERMANENT TITLE POSITION ====================
-au.TitleLabel = r
+-- ==================== PERMANENT TITLE POSITION (Safe Version) ====================
+-- Wait until the UI is fully created before applying position
+task.spawn(function()
+    repeat task.wait() until au.UIElements and au.UIElements.Main and au.UIElements.Main.Main and au.UIElements.Main.Main.Topbar
 
--- Apply the permanent position from the theme table
-if ao.TitlePosition then   -- ao is the creator, it holds the theme
     local leftContainer = au.UIElements.Main.Main.Topbar.Left
+    if not leftContainer then return end
 
-    r.Parent = leftContainer
-    r.Position = ao.TitlePosition          -- use the permanent value
-    r.AnchorPoint = Vector2.new(0, 0.5)
-    r.ZIndex = 100
-    r.LayoutOrder = 999
+    au.TitleLabel = r
 
-    -- Permanently disable layouts that move the title
-    local list = leftContainer:FindFirstChildOfClass("UIListLayout")
-    if list then list.Enabled = false end
+    if ao.TitlePosition then
+        r.Parent = leftContainer
+        r.Position = ao.TitlePosition
+        r.AnchorPoint = Vector2.new(0, 0.5)
+        r.ZIndex = 100
+        r.LayoutOrder = 999
 
-    local titleFrame = leftContainer:FindFirstChild("Title")
-    if titleFrame then
-        local innerList = titleFrame:FindFirstChildOfClass("UIListLayout")
-        if innerList then innerList.Enabled = false end
+        -- Disable layouts permanently
+        local list = leftContainer:FindFirstChildOfClass("UIListLayout")
+        if list then list.Enabled = false end
+
+        local titleFrame = leftContainer:FindFirstChild("Title")
+        if titleFrame then
+            local innerList = titleFrame:FindFirstChildOfClass("UIListLayout")
+            if innerList then innerList.Enabled = false end
+        end
     end
-end
+end)
 -- ===========================================================
 
 au.UIElements.Main = am("Frame", {
