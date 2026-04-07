@@ -266,6 +266,8 @@ WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
 
+TitlePosition = nil,
+
 WindowSearchBarBackground="Background",
 
 TabBackground="Hover",
@@ -12210,17 +12212,32 @@ end
 
 -- Create the Title label
 local r = am("TextLabel", {
-Text = au.Title,
-FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
-BackgroundTransparency = 1,
-AutomaticSize = "XY",
-Name = "Title",
-TextXAlignment = "Left",
-TextSize = 16,
-ThemeTag = {
-TextColor3 = "WindowTopbarTitle",
-},
+    Text = au.Title,
+    FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
+    BackgroundTransparency = 1,
+    AutomaticSize = "XY",
+    Name = "Title",
+    TextXAlignment = "Left",
+    TextSize = 16,
+    ThemeTag = {
+        TextColor3 = "WindowTopbarTitle",
+    },
 })
+
+-- ==================== CUSTOM TITLE POSITION SUPPORT ====================
+au.TitleLabel = r   -- Save reference so we can move it
+
+if au.TitlePosition then
+    -- Move the title to wherever you want
+    r.Parent = au.UIElements.Main.Main.Topbar.Left
+    r.Position = au.TitlePosition
+    r.AnchorPoint = Vector2.new(0, 0.5)   -- vertically centered
+    r.ZIndex = 100
+    r.LayoutOrder = 999                   -- prevent list layout from moving it
+else
+    -- Original behavior (put it back in the title container)
+    r.Parent = au.UIElements.Main.Main.Topbar.Left.Title or au.UIElements.Main.Main.Topbar.Left
+end
 
 -- NEW: Expose TitleLabel so you can modify it later
 au.TitleLabel = r
