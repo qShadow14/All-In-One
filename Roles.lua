@@ -55,37 +55,6 @@ local PlayerRoles = {
     [272727272] = "Banned",
 }
 
-local WelcomeMessages = {
-    ["Owner"]         = "Welcome back, Owner. You have full control of this game.",
-    ["CoOwner"]       = "Welcome, Co-Owner. All systems are available to you.",
-    ["LeadDeveloper"] = "Lead Developer detected. Deploy access is now active.",
-    ["SrDeveloper"]   = "Sr. Developer recognized. Script management unlocked.",
-    ["Developer"]     = "Developer recognized. Dev tools are now unlocked.",
-    ["HeadManager"]   = "Head Manager online. Full management access granted.",
-    ["Manager"]       = "Manager online. Event management unlocked.",
-    ["HeadAdmin"]     = "Head Admin active. Promotion rights are now granted.",
-    ["SrAdmin"]       = "Sr. Admin active. Staff management is now enabled.",
-    ["Admin"]         = "Admin active. Ban and unban access granted.",
-    ["JrAdmin"]       = "Jr. Admin active. Admin panel is now unlocked.",
-    ["SrModerator"]   = "Sr. Moderator active. Temp-ban access granted.",
-    ["Moderator"]     = "Moderator active. Kick and mute rights granted.",
-    ["Support"]       = "Support active. Report access is now granted.",
-    ["Helper"]        = "Helper recognized. Mute access granted.",
-    ["Trialist"]      = "Trialist — staff access has been granted.",
-    ["Tester"]        = "Tester recognized. Test server access granted.",
-    ["Designer"]      = "Designer recognized. Design tools are now unlocked.",
-    ["Scripter"]      = "Scripter recognized. Script access granted.",
-    ["Builder"]       = "Builder recognized. Build zone is now unlocked.",
-    ["Booster"]       = "Thank you for boosting! Your perks are active.",
-    ["Donator"]       = "Thank you for donating! Donator perks are now active.",
-    ["VIP"]           = "VIP access granted. Enjoy your exclusive perks!",
-    ["Trusted"]       = "Trusted member recognized. Welcome!",
-    ["Verified"]      = "Verified member recognized. Welcome!",
-    ["Muted"]         = "You are currently muted in this game.",
-    ["Banned"]        = "You are banned from this game.",
-    ["User"]          = "Welcome! You are logged in as a regular user.",
-}
-
 -- ================================================
 -- GET PLAYER ROLE & SEND NOTIFICATION
 -- ================================================
@@ -95,11 +64,9 @@ local StarterGui = game:GetService("StarterGui")
 local LocalPlayer = Players.LocalPlayer
 local userId = LocalPlayer.UserId
 local role = PlayerRoles[userId] or "User"
-local message = WelcomeMessages[role] or WelcomeMessages["User"]
 
--- Send notification
 StarterGui:SetCore("SendNotification", {
-    Title = "Role: " .. role,
-    Text = message,
+    Title = "Role Detected",
+    Text = "You are: " .. role,
     Duration = 6,
 })
