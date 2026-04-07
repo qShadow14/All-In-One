@@ -1,7 +1,13 @@
 local Tab = Window:Tab({
-    Title = "Supported Games",
-    Icon = "gamepad-directional",
-    Locked = false,
+    Title = "Supported Game",
+    Desc = "", -- optional
+    Icon = "gamepad-directional", -- lucide icon or "rbxassetid://" or URL. optional
+    IconColor = Color3.fromHex("#ffa600"), -- custom icon color. optional
+    IconShape = "Square", -- "Square" or "Circle". optional
+    IconThemed = true, -- use theme colors. optional
+    Locked = false, -- disable tab interaction. optional
+    ShowTabTitle = false, -- show title inside tab. optional
+    Border = true, -- add border around tab. optional
 })
 
 -- Supported Games
