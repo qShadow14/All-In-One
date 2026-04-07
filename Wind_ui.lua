@@ -266,7 +266,7 @@ WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
 
-TitlePosition = UDim2.new(0, 250, 0.5, 0),
+TitlePosition = UDim2.new(0, 460, 0.5, 0),
 
 WindowSearchBarBackground="Background",
 
