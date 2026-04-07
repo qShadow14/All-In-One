@@ -12211,6 +12211,20 @@ m = createAuthor(au.Author)
 end
 
 -- ==================== CUSTOM TITLE POSITION SUPPORT ====================
+
+-- Custom Title Position (put this after the title label 'r' is created)
+if au.TitlePosition then
+    r.Parent = au.UIElements.Main.Main.Topbar.Left
+    r.Position = au.TitlePosition          -- e.g. UDim2.new(0, 460, 0.5, 0)
+    r.AnchorPoint = Vector2.new(0, 0.5)
+    r.ZIndex = 100
+    r.LayoutOrder = 999                    -- prevents UIListLayout from moving it
+else
+    r.Parent = au.UIElements.Main.Main.Topbar.Left.Title or au.UIElements.Main.Main.Topbar.Left
+end
+
+au.TitleLabel = r   -- keep reference
+
 local titleContainer = au.UIElements.Main.Main.Topbar.Left
 
 -- Create the Title label
