@@ -12203,32 +12203,8 @@ Name="Author",
 end
 
 local m
-local p
 
--- Create Author label if it exists
-if au.Author then
-m = createAuthor(au.Author)
-end
-
--- ==================== CUSTOM TITLE POSITION SUPPORT ====================
-
--- Custom Title Position (put this after the title label 'r' is created)
-if au.TitlePosition then
-    r.Parent = au.UIElements.Main.Main.Topbar.Left
-    r.Position = au.TitlePosition          -- e.g. UDim2.new(0, 460, 0.5, 0)
-    r.AnchorPoint = Vector2.new(0, 0.5)
-    r.ZIndex = 100
-    r.LayoutOrder = 999                    -- prevents UIListLayout from moving it
-else
-    r.Parent = au.UIElements.Main.Main.Topbar.Left.Title or au.UIElements.Main.Main.Topbar.Left
-end
-
-au.TitleLabel = r   -- keep reference
-
-local titleContainer = au.UIElements.Main.Main.Topbar.Left
-
--- Create the Title label
-local r = am("TextLabel", {
+local titleLabel = am("TextLabel", {
     Text = au.Title,
     FontFace = Font.new(al.Font, Enum.FontWeight.SemiBold),
     BackgroundTransparency = 1,
@@ -12242,18 +12218,12 @@ local r = am("TextLabel", {
     ZIndex = 100,
 })
 
--- Apply custom position if requested
-if au.TitlePosition then
-    r.Parent = titleContainer
-    r.Position = au.TitlePosition
-    r.AnchorPoint = Vector2.new(0, 0.5)
-    r.LayoutOrder = 999  -- High value so UIListLayout doesn't mess with it
-else
-    -- Default behavior (inside the Title frame with ListLayout)
-    r.Parent = au.UIElements.Main.Main.Topbar.Left.Title or titleContainer
-end
+au.TitleLabel = titleLabel
+local r = titleLabel
 
-au.TitleLabel = r  -- Expose it for later use
+if au.Author then
+    m = createAuthor(au.Author)
+end
 
 -- ==================== TITLE POSITIONING ====================
 -- If you want to move the title to a custom position (e.g. 200 pixels from left)
@@ -12403,6 +12373,20 @@ PaddingBottom=UDim.new(0,au.UIPadding),
 }),
 }),
 })
+
+if au.Author and m then
+    m.Parent = au.UIElements.Main.Main.Topbar.Left.Title
+end
+
+if au.TitlePosition then
+    titleLabel.Parent = au.UIElements.Main.Main.Topbar.Left
+    titleLabel.Position = au.TitlePosition
+    titleLabel.AnchorPoint = Vector2.new(0, 0.5)
+    titleLabel.LayoutOrder = 999
+    titleLabel.ZIndex = 100
+else
+    titleLabel.Parent = au.UIElements.Main.Main.Topbar.Left.Title
+end
 
 al.AddSignal(au.UIElements.Main.Main.Topbar.Left:GetPropertyChangedSignal"AbsoluteSize",function()
 local u=0
