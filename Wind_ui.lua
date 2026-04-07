@@ -12225,15 +12225,6 @@ if au.Author then
     m = createAuthor(au.Author)
 end
 
--- ==================== TITLE POSITIONING ====================
--- If you want to move the title to a custom position (e.g. 200 pixels from left)
-if au.TitlePosition then
-r.Position = au.TitlePosition
-r.AnchorPoint = Vector2.new(0, 0.5)   -- Center vertically
-r.ZIndex = 100
-end
--- ===========================================================
-
 au.UIElements.Main = am("Frame", {
 Size = au.Size,
 Position = au.Position,
@@ -12379,13 +12370,12 @@ if au.Author and m then
 end
 
 if au.TitlePosition then
-    titleLabel.Parent = au.UIElements.Main.Main.Topbar.Left
-    titleLabel.Position = au.TitlePosition
-    titleLabel.AnchorPoint = Vector2.new(0, 0.5)
-    titleLabel.LayoutOrder = 999
-    titleLabel.ZIndex = 100
-else
-    titleLabel.Parent = au.UIElements.Main.Main.Topbar.Left.Title
+    local titleFrame = au.UIElements.Main.Main.Topbar.Left.Title
+    titleFrame.Parent = au.UIElements.Main.Main.Topbar
+    titleFrame.Position = au.TitlePosition
+    titleFrame.AnchorPoint = Vector2.new(0, 0.5)
+    titleFrame.LayoutOrder = 999
+    titleFrame.ZIndex = 100
 end
 
 al.AddSignal(au.UIElements.Main.Main.Topbar.Left:GetPropertyChangedSignal"AbsoluteSize",function()
