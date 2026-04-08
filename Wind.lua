@@ -12306,22 +12306,7 @@ SortOrder="LayoutOrder",
 FillDirection="Horizontal",
 VerticalAlignment="Center",
 }),
-am("Frame",{
-AutomaticSize="XY",
-BackgroundTransparency=1,
-Name="Title",
-Size=UDim2.new(0,0,1,0),
-LayoutOrder=2,
-},{
-am("UIListLayout",{
-Padding=UDim.new(0,0),
-SortOrder="LayoutOrder",
-FillDirection="Vertical",
-VerticalAlignment="Center",
-}),
-r,
-m,
-}),
+-- Title moved to Right frame (next to Mac buttons). See LayoutOrder=1000 below.
 am("UIPadding",{
 PaddingLeft=UDim.new(0,4),
 }),
@@ -12357,6 +12342,29 @@ am("UIListLayout",{
 Padding=UDim.new(0,au.Topbar.ButtonsType=="Default"and 9 or 0),
 FillDirection="Horizontal",
 SortOrder="LayoutOrder",
+VerticalAlignment="Center",
+}),
+-- PERMANENTLY ANCHORED: Title is glued right after green button (LayoutOrder=1000).
+-- User topbar buttons use LayoutOrder < 997, Mac buttons are 997/998/999.
+-- Title NEVER moves. To adjust gap change Padding above.
+am("Frame",{
+AutomaticSize="XY",
+BackgroundTransparency=1,
+Name="TitleAnchor",
+Size=UDim2.new(0,0,1,0),
+LayoutOrder=1000,
+},{
+am("UIListLayout",{
+Padding=UDim.new(0,0),
+SortOrder="LayoutOrder",
+FillDirection="Vertical",
+VerticalAlignment="Center",
+}),
+am("UIPadding",{
+PaddingLeft=UDim.new(0,8),
+}),
+r,
+m,
 }),
 }),
 am("UIPadding",{
