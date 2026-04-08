@@ -12311,10 +12311,10 @@ FillDirection="Horizontal",
 VerticalAlignment="Center",
 }),
 am("Frame",{
-AutomaticSize="XY",
+AutomaticSize="Y",
 BackgroundTransparency=1,
 Name="Title",
-Size=UDim2.new(0,0,1,0),
+Size=UDim2.new(0,160,1,0),
 LayoutOrder=2,
 ClipsDescendants=true,
 },{
@@ -12400,15 +12400,13 @@ UDim2.new(1,-u-v-((au.UIPadding*2)/at.WindUI.UIScale),1,0)
 end)
 
 if au.Topbar.ButtonsType~="Default"then
-al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",function()
--- Anchor title group right next to the green (last Mac) button with a small 6px gap
-au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
-0,
-(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+6,
-0,
-0
-)
-end)
+local function _anchorTitleNearGreen()
+local rightW=au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale
+au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(0,rightW+6,0,0)
+end
+al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",_anchorTitleNearGreen)
+al.AddSignal(au.UIElements.Main.Main.Topbar:GetPropertyChangedSignal"AbsoluteSize",_anchorTitleNearGreen)
+task.defer(_anchorTitleNearGreen)
 end
 
 function au.CreateTopbarButton(u,v,x,z,A,B,C,F)
