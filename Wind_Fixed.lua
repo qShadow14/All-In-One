@@ -12303,6 +12303,8 @@ AutomaticSize="X",
 Size=UDim2.new(0,0,1,0),
 BackgroundTransparency=1,
 Name="Left",
+Position=au.Topbar.ButtonsType~="Default" and UDim2.new(0,0,0,0) or UDim2.new(0,au.UIPadding,0,0),
+AnchorPoint=Vector2.new(0,0),
 },{
 am("UIListLayout",{
 Padding=UDim.new(0, 12),
@@ -12314,7 +12316,7 @@ am("Frame",{
 AutomaticSize="Y",
 BackgroundTransparency=1,
 Name="Title",
-Size=UDim2.new(0,160,1,0),
+Size=UDim2.new(0,200,1,0),
 LayoutOrder=2,
 ClipsDescendants=true,
 },{
@@ -12382,16 +12384,10 @@ local u=0
 local v=au.UIElements.Main.Main.Topbar.Right.UIListLayout.AbsoluteContentSize.X
 /at.WindUI.UIScale
 
-
-
-
-
-u=au.UIElements.Main.Main.Topbar.Left.AbsoluteSize.X/at.WindUI.UIScale
 if au.Topbar.ButtonsType~="Default"then
+u=au.UIElements.Main.Main.Topbar.Left.AbsoluteSize.X/at.WindUI.UIScale
 u=u+v+au.UIPadding-4
 end
-
-
 
 au.UIElements.Main.Main.Topbar.Center.Position=
 UDim2.new(0,u+(au.UIPadding/at.WindUI.UIScale),0.5,0)
