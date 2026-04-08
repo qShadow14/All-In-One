@@ -266,7 +266,7 @@ WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
 
-TitlePosition = UDim2.new(0, 460, 0.5, 0),
+-- TitlePosition intentionally removed. Title position is locked in source (Left UIListLayout padding).
 
 WindowSearchBarBackground="Background",
 
@@ -12224,7 +12224,12 @@ TextColor3 = "WindowTopbarTitle",
 },
 })
 
+-- NEW: Expose TitleLabel so you can modify it later
+au.TitleLabel = r
 
+-- TITLE IS PERMANENTLY ANCHORED IN THE LEFT FRAME VIA UIListLayout.
+-- To move it, change Padding=UDim.new(0, 4) in the Left frame's UIListLayout above.
+-- Do NOT use TitlePosition — it is intentionally disabled.
 
 au.UIElements.Main = am("Frame", {
 Size = au.Size,
@@ -12293,11 +12298,9 @@ AutomaticSize="X",
 Size=UDim2.new(0,0,1,0),
 BackgroundTransparency=1,
 Name="Left",
-Position=UDim2.new(0,2,0,0),
-AnchorPoint=Vector2.new(0,0),
 },{
 am("UIListLayout",{
-Padding=UDim.new(0, 12),
+Padding=UDim.new(0, 4), -- HARDCODED: title permanently close to buttons. Change only here in source.
 SortOrder="LayoutOrder",
 FillDirection="Horizontal",
 VerticalAlignment="Center",
@@ -12345,12 +12348,12 @@ Padding=UDim.new(0,au.UIPadding/2),
 am("Frame",{
 AutomaticSize="XY",
 BackgroundTransparency=1,
-Position=UDim2.new(1,0,0.5,0),
-AnchorPoint=Vector2.new(1,0.5),
+Position=UDim2.new(au.Topbar.ButtonsType=="Default"and 1 or 0,0,0.5,0),
+AnchorPoint=Vector2.new(au.Topbar.ButtonsType=="Default"and 1 or 0,0.5),
 Name="Right",
 },{
 am("UIListLayout",{
-Padding=UDim.new(0,au.Topbar.ButtonsType=="Default"and 9 or 6),
+Padding=UDim.new(0,au.Topbar.ButtonsType=="Default"and 9 or 0),
 FillDirection="Horizontal",
 SortOrder="LayoutOrder",
 }),
@@ -12369,15 +12372,37 @@ PaddingBottom=UDim.new(0,au.UIPadding),
 })
 
 al.AddSignal(au.UIElements.Main.Main.Topbar.Left:GetPropertyChangedSignal"AbsoluteSize",function()
-local u=au.UIElements.Main.Main.Topbar.Left.AbsoluteSize.X/at.WindUI.UIScale
-local v=au.UIElements.Main.Main.Topbar.Right.UIListLayout.AbsoluteContentSize.X/at.WindUI.UIScale
--- Center (version/tag) follows right after title, never jumps around
+local u=0
+local v=au.UIElements.Main.Main.Topbar.Right.UIListLayout.AbsoluteContentSize.X
+/at.WindUI.UIScale
+
+
+
+
+
+u=au.UIElements.Main.Main.Topbar.Left.AbsoluteSize.X/at.WindUI.UIScale
+if au.Topbar.ButtonsType~="Default"then
+u=u+v+au.UIPadding-4
+end
+
+
+
 au.UIElements.Main.Main.Topbar.Center.Position=
-UDim2.new(0,2+u+(au.UIPadding/at.WindUI.UIScale),0.5,0)
+UDim2.new(0,u+(au.UIPadding/at.WindUI.UIScale),0.5,0)
 au.UIElements.Main.Main.Topbar.Center.Size=
-UDim2.new(1,-2-u-v-((au.UIPadding*2)/at.WindUI.UIScale),1,0)
+UDim2.new(1,-u-v-((au.UIPadding*2)/at.WindUI.UIScale),1,0)
 end)
--- Right frame anchored to right, title Left frame is fixed and never moves
+
+if au.Topbar.ButtonsType~="Default"then
+al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",function()
+au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
+0,
+(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+au.UIPadding-4,
+0,
+0
+)
+end)
+end
 
 function au.CreateTopbarButton(u,v,x,z,A,B,C,F)
 local G=al.Image(
