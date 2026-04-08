@@ -2492,7 +2492,7 @@ Position=UDim2.new(0,-50,0,-50),
 ScaleType="Slice",
 SliceCenter=Rect.new(99,99,99,99),
 BackgroundTransparency=1,
-ZIndex=-999999999999999,
+ZIndex=2147483647,
 Name="Blur",
 })
 
