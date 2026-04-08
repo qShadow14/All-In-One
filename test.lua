@@ -12408,7 +12408,7 @@ au.Topbar.ButtonsType=="Default"and au.UICorner-(au.UIPadding/2)or 999,
 Size=au.Topbar.ButtonsType=="Default"
 and UDim2.new(0,au.Topbar.Height-16,0,au.Topbar.Height-16)
 or UDim2.new(0,14,0,14),
-LayoutOrder=A or 999,
+LayoutOrder=z or 999,
 
 
 ZIndex=9999,
@@ -12448,7 +12448,7 @@ BackgroundTransparency=1,
 Parent=au.Topbar.ButtonsType=="Mac"
 and au.UIElements.Main.Main.Topbar.Left
 or  au.UIElements.Main.Main.Topbar.Right,
-LayoutOrder=A or 999,
+LayoutOrder=z or 999,
 },{
 H,
 })
