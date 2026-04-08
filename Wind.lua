@@ -266,7 +266,7 @@ WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
 
--- TitlePosition intentionally removed. Title position is locked in source (Left UIListLayout padding).
+TitlePosition = UDim2.new(0, 460, 0.5, 0),
 
 WindowSearchBarBackground="Background",
 
@@ -12227,9 +12227,10 @@ TextColor3 = "WindowTopbarTitle",
 -- NEW: Expose TitleLabel so you can modify it later
 au.TitleLabel = r
 
--- TITLE IS PERMANENTLY ANCHORED IN THE LEFT FRAME VIA UIListLayout.
--- To move it, change Padding=UDim.new(0, 4) in the Left frame's UIListLayout above.
--- Do NOT use TitlePosition — it is intentionally disabled.
+-- ==================== TITLE POSITIONING ====================
+-- If you want to move the title to a custom position (e.g. 200 pixels from left)
+-- TitlePosition disabled. Title is permanently anchored by UIListLayout padding above.
+-- ===========================================================
 
 au.UIElements.Main = am("Frame", {
 Size = au.Size,
@@ -12300,7 +12301,7 @@ BackgroundTransparency=1,
 Name="Left",
 },{
 am("UIListLayout",{
-Padding=UDim.new(0, 4), -- HARDCODED: title permanently close to buttons. Change only here in source.
+Padding=UDim.new(0, 4), -- ANCHORED: title gap to green button. Only change here in source.
 SortOrder="LayoutOrder",
 FillDirection="Horizontal",
 VerticalAlignment="Center",
