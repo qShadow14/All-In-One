@@ -12294,7 +12294,7 @@ AutomaticSize="X",
 Size=UDim2.new(0,0,1,0),
 BackgroundTransparency=1,
 Name="Left",
-Position=UDim2.new(0, 80, 0, 0),
+Position=UDim2.new(0, 10, 0, 0),
 },{
 am("UIListLayout",{
 Padding=UDim.new(0, 12),
@@ -12394,7 +12394,7 @@ if au.Topbar.ButtonsType~="Default"then
 al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",function()
 au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
 0,
-(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+au.UIPadding-4+80,
+(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+au.UIPadding-4+10,
 0,
 0
 )
