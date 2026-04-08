@@ -12227,15 +12227,6 @@ TextColor3 = "WindowTopbarTitle",
 -- NEW: Expose TitleLabel so you can modify it later
 au.TitleLabel = r
 
--- ==================== TITLE POSITIONING ====================
--- If you want to move the title to a custom position (e.g. 200 pixels from left)
-if au.TitlePosition then
-r.Position = au.TitlePosition
-r.AnchorPoint = Vector2.new(0, 0.5)   -- Center vertically
-r.ZIndex = 100
-end
--- ===========================================================
-
 au.UIElements.Main = am("Frame", {
 Size = au.Size,
 Position = au.Position,
@@ -12303,7 +12294,7 @@ AutomaticSize="X",
 Size=UDim2.new(0,0,1,0),
 BackgroundTransparency=1,
 Name="Left",
-Position=UDim2.new(0, au.TitleXOffset or 0, 0, au.TitleYOffset or 0),
+Position=UDim2.new(0, 80, 0, 0),
 },{
 am("UIListLayout",{
 Padding=UDim.new(0, 12),
@@ -12328,8 +12319,7 @@ r,
 m,
 }),
 am("UIPadding",{
-PaddingLeft=UDim.new(0, 4 + (au.TitleXOffset or 0)),
-PaddingTop=UDim.new(0, au.TitleYOffset or 0),
+PaddingLeft=UDim.new(0,4),
 }),
 }),
 am("ScrollingFrame",{
@@ -12404,9 +12394,9 @@ if au.Topbar.ButtonsType~="Default"then
 al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",function()
 au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
 0,
-(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+au.UIPadding-4+(au.TitleXOffset or 0),
+(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+au.UIPadding-4+80,
 0,
-au.TitleYOffset or 0
+0
 )
 end)
 end
