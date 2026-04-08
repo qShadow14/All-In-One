@@ -1,5 +1,5 @@
 -- Create Credits Tab (use :CreateTab not :Tab)
-local InfoTab = Window:CreateTab({
+local Tab = Window:CreateTab({
     Title = "Credits",
     Desc = "Who helped with the script",
     Icon = "crown",
