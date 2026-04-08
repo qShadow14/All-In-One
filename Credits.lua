@@ -1,4 +1,5 @@
-local InfoTab = Window:Tab({
+-- Create Credits Tab (use :CreateTab not :Tab)
+local InfoTab = Window:CreateTab({
     Title = "Credits",
     Desc = "Who helped with the script",
     Icon = "crown",
@@ -10,9 +11,10 @@ local InfoTab = Window:Tab({
     Border = true,
 })
 
+-- All paragraphs use InfoTab, not Tab
 InfoTab:Paragraph({
     Title = "👑 Owner",
-    Desc = "[1] qShadow / Vexor ",
+    Desc = "[1] qShadow / Vexor",
     Color = Color3.fromRGB(255, 80, 255),
     Locked = false,
 })
