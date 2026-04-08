@@ -13427,7 +13427,7 @@ end
 end,(au.Topbar.ButtonsType=="Default"and 999 or 1),nil,Color3.fromHex"#F4695F")
 
 do
-local RightFrame=au.UIElements.Main.Main.Topbar.Right
+local LeftFrame=au.UIElements.Main.Main.Topbar.Left
 local btnSize=UDim2.new(0,14,0,14)
 local btnColors={
 Color3.fromHex"#F4695F",
@@ -13440,8 +13440,8 @@ for i,col in ipairs(btnColors)do
 local wrapper=ap("Frame",{
 Size=UDim2.new(0,24,0,24),
 BackgroundTransparency=1,
-Parent=RightFrame,
-LayoutOrder=1000+i,
+Parent=LeftFrame,
+LayoutOrder=100+i,
 })
 local btn=al.NewRoundFrame(999,"Squircle",{
 Size=btnSize,
