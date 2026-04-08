@@ -12445,7 +12445,9 @@ am("Frame",{
 Size=au.Topbar.ButtonsType~="Default"and UDim2.new(0,24,0,24)
 or UDim2.new(0,au.Topbar.Height-16,0,au.Topbar.Height-16),
 BackgroundTransparency=1,
-Parent=au.UIElements.Main.Main.Topbar.Right,
+Parent=au.Topbar.ButtonsType=="Mac"
+and au.UIElements.Main.Main.Topbar.Left
+or  au.UIElements.Main.Main.Topbar.Right,
 LayoutOrder=A or 999,
 },{
 H,
