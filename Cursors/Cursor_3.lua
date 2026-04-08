@@ -10,7 +10,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 -- =============================================
 
 local CURSOR_IMAGE = "rbxassetid://80004539068373"
-local CURSOR_SIZE  = 20
+local CURSOR_SIZE  = 25
 
 local COLOR_MODE = "static"
 local STATIC_COLOR = Color3.fromHex("#ff0000")
