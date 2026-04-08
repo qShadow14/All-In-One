@@ -12297,7 +12297,7 @@ Position=UDim2.new(0,2,0,0),
 AnchorPoint=Vector2.new(0,0),
 },{
 am("UIListLayout",{
-Padding=UDim.new(0, 12),
+Padding=UDim.new(0, 6),
 SortOrder="LayoutOrder",
 FillDirection="Horizontal",
 VerticalAlignment="Center",
@@ -12307,7 +12307,7 @@ AutomaticSize="XY",
 BackgroundTransparency=1,
 Name="Title",
 Size=UDim2.new(0,0,1,0),
-LayoutOrder=2,
+LayoutOrder=99,
 },{
 am("UIListLayout",{
 Padding=UDim.new(0,0),
@@ -12687,7 +12687,7 @@ au.Topbar.ButtonsType=="Mac"and"rbxassetid://127426072704909"or"maximize",
 function()
 au:ToggleFullscreen()
 end,
-(au.Topbar.ButtonsType=="Default"and 998 or 999),
+(au.Topbar.ButtonsType=="Default"and 998 or 3),
 true,
 Color3.fromHex"#60C762",
 au.Topbar.ButtonsType=="Mac"and 9 or nil
@@ -12754,7 +12754,7 @@ au:Close()
 
 
 
-end,(au.Topbar.ButtonsType=="Default"and 997 or 998),nil,Color3.fromHex"#F4C948")
+end,(au.Topbar.ButtonsType=="Default"and 997 or 2),nil,Color3.fromHex"#F4C948")
 
 function au.OnOpen(z,A)
 au.OnOpenCallback=A
@@ -13424,7 +13424,50 @@ else
 au:Destroy()
 end
 end
-end,(au.Topbar.ButtonsType=="Default"and 999 or 997),nil,Color3.fromHex"#F4695F")
+end,(au.Topbar.ButtonsType=="Default"and 999 or 1),nil,Color3.fromHex"#F4695F")
+
+do
+local RightFrame=au.UIElements.Main.Main.Topbar.Right
+local btnSize=UDim2.new(0,14,0,14)
+local btnColors={
+Color3.fromHex"#F4695F",
+Color3.fromHex"#F4C948",
+Color3.fromHex"#60C762",
+Color3.fromHex"#4A90D9",
+Color3.fromHex"#9B59B6",
+}
+for i,col in ipairs(btnColors)do
+local wrapper=ap("Frame",{
+Size=UDim2.new(0,24,0,24),
+BackgroundTransparency=1,
+Parent=RightFrame,
+LayoutOrder=1000+i,
+})
+local btn=al.NewRoundFrame(999,"Squircle",{
+Size=btnSize,
+ImageColor3=col,
+ImageTransparency=0,
+AnchorPoint=Vector2.new(0.5,0.5),
+Position=UDim2.new(0.5,0,0.5,0),
+ZIndex=9999,
+Parent=wrapper,
+},{
+al.NewRoundFrame(999,"Glass-1",{
+Size=UDim2.new(1,0,1,0),
+ThemeTag={ImageColor3="Outline"},
+ImageTransparency=0.5,
+Name="Outline",
+}),
+ap("UIScale",{Scale=1}),
+},true)
+al.AddSignal(btn.MouseEnter,function()
+ao.Tween(btn.UIScale,0.15,{Scale=1.2}):Play()
+end)
+al.AddSignal(btn.MouseLeave,function()
+ao.Tween(btn.UIScale,0.15,{Scale=1}):Play()
+end)
+end
+end
 
 function au.Tag(G,H)
 if au.UIElements.Main.Main.Topbar.Center.Visible==false then
