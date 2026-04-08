@@ -12290,6 +12290,23 @@ b,
 
 
 am("Frame",{
+AutomaticSize="XY",
+BackgroundTransparency=1,
+Name="MacLeft",
+Position=UDim2.new(0,0,0.5,0),
+AnchorPoint=Vector2.new(0,0.5),
+},{
+am("UIListLayout",{
+Padding=UDim.new(0,6),
+FillDirection="Horizontal",
+SortOrder="LayoutOrder",
+VerticalAlignment="Center",
+}),
+am("UIPadding",{
+PaddingLeft=UDim.new(0,au.UIPadding),
+}),
+}),
+am("Frame",{
 AutomaticSize="X",
 Size=UDim2.new(0,0,1,0),
 BackgroundTransparency=1,
@@ -12379,16 +12396,21 @@ local v=au.UIElements.Main.Main.Topbar.Right.UIListLayout.AbsoluteContentSize.X
 
 
 u=au.UIElements.Main.Main.Topbar.Left.AbsoluteSize.X/at.WindUI.UIScale
-if au.Topbar.ButtonsType~="Default"then
-u=u+v+au.UIPadding-4
-end
 
+local macLeftWidth = au.Topbar.ButtonsType~="Default"
+and (au.UIElements.Main.Main.Topbar.MacLeft.AbsoluteSize.X/at.WindUI.UIScale)
+or 0
 
-
+local titleX = macLeftWidth + 2 + u + (au.UIPadding/at.WindUI.UIScale)
 au.UIElements.Main.Main.Topbar.Center.Position=
-UDim2.new(0,u+(au.UIPadding/at.WindUI.UIScale),0.5,0)
+UDim2.new(0, titleX, 0.5, 0)
 au.UIElements.Main.Main.Topbar.Center.Size=
-UDim2.new(1,-u-v-((au.UIPadding*2)/at.WindUI.UIScale),1,0)
+UDim2.new(1,-titleX-v-((au.UIPadding*2)/at.WindUI.UIScale),1,0)
+end)
+
+al.AddSignal(au.UIElements.Main.Main.Topbar.MacLeft:GetPropertyChangedSignal"AbsoluteSize",function()
+local macLeftWidth = au.UIElements.Main.Main.Topbar.MacLeft.AbsoluteSize.X/at.WindUI.UIScale
+au.UIElements.Main.Main.Topbar.Left.Position = UDim2.new(0, macLeftWidth + 2, 0, 0)
 end)
 
 -- Title position is hardcoded and never moves regardless of topbar buttons
@@ -12455,11 +12477,13 @@ Scale=1,
 true
 )
 
+local isMacButton = (A == 997 or A == 998 or A == 999) and au.Topbar.ButtonsType ~= "Default"
+
 am("Frame",{
 Size=au.Topbar.ButtonsType~="Default"and UDim2.new(0,24,0,24)
 or UDim2.new(0,au.Topbar.Height-16,0,au.Topbar.Height-16),
 BackgroundTransparency=1,
-Parent=au.UIElements.Main.Main.Topbar.Right,
+Parent=isMacButton and au.UIElements.Main.Main.Topbar.MacLeft or au.UIElements.Main.Main.Topbar.Right,
 LayoutOrder=A or 999,
 },{
 H,
