@@ -12361,17 +12361,18 @@ Padding=UDim.new(0,au.UIPadding/2),
 }),
 }),
 am("Frame",{
-AutomaticSize="XY",
+AutomaticSize=au.Topbar.ButtonsType=="Default"and "XY" or "Y",
+Size=au.Topbar.ButtonsType=="Default"and UDim2.new(0,0,0,0) or UDim2.new(1,0,1,0),
 BackgroundTransparency=1,
 Position=UDim2.new(1,0,0.5,0),
 AnchorPoint=Vector2.new(1,0.5),
 Name="Right",
 },{
-am("UIListLayout",{
-Padding=UDim.new(0,au.Topbar.ButtonsType=="Default"and 9 or 6),
+au.Topbar.ButtonsType=="Default"and am("UIListLayout",{
+Padding=UDim.new(0,9),
 FillDirection="Horizontal",
 SortOrder="LayoutOrder",
-}),
+}) or nil,
 }),
 am("UIPadding",{
 PaddingTop=UDim.new(0,au.UIPadding),
@@ -12479,7 +12480,7 @@ true
 
 local isMacButton = (A == 997 or A == 998 or A == 999) and au.Topbar.ButtonsType ~= "Default"
 
-am("Frame",{
+local buttonFrame = am("Frame",{
 Size=au.Topbar.ButtonsType~="Default"and UDim2.new(0,24,0,24)
 or UDim2.new(0,au.Topbar.Height-16,0,au.Topbar.Height-16),
 BackgroundTransparency=1,
@@ -12488,6 +12489,23 @@ LayoutOrder=A or 999,
 },{
 H,
 })
+
+-- For custom buttons in Mac mode, position them from the right at fixed offsets
+-- First custom button at X=460, second at 415, third at 370, etc.
+if not isMacButton and au.Topbar.ButtonsType ~= "Default" then
+	local order = A or 999
+	-- Map LayoutOrder to right-side X position: lower order = further right
+	-- Each button is 45px apart starting from 460
+	local buttonIndex = 1
+	for _, btn in next, au.TopBarButtons do
+		if btn.Object ~= H then
+			buttonIndex = buttonIndex + 1
+		end
+	end
+	local xPos = 460 - ((buttonIndex - 1) * 45)
+	buttonFrame.Position = UDim2.new(0, xPos, 0.5, 0)
+	buttonFrame.AnchorPoint = Vector2.new(0, 0.5)
+end
 
 
 
