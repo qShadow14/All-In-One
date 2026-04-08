@@ -14,6 +14,15 @@
     License: MIT
 ]]
 
+-- ============================================================
+--  TITLE POSITION CONFIG
+--  Change the X offset (pixels from left edge of topbar) to
+--  move the title, author and icon together.
+--  Set to nil to use the default library position.
+-- ============================================================
+local TITLE_POSITION_X = 180  -- <-- change this number on GitHub
+-- ============================================================
+
 local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()local b=(cloneref or clonereference or function(b)return b end)
 
 local d=b(game:GetService"ReplicatedStorage":WaitForChild("GetIcons",99999):InvokeServer())
@@ -265,8 +274,6 @@ WindowTopbarTitle="Text",
 WindowTopbarAuthor="Text",
 WindowTopbarIcon="Icon",
 WindowTopbarButtonIcon="Icon",
-
-TitlePosition = UDim2.new(0, 460, 0.5, 0),
 
 WindowSearchBarBackground="Background",
 
@@ -12228,12 +12235,15 @@ TextColor3 = "WindowTopbarTitle",
 au.TitleLabel = r
 
 -- ==================== TITLE POSITIONING ====================
--- If you want to move the title to a custom position (e.g. 200 pixels from left)
-if au.TitlePosition then
-r.Position = au.TitlePosition
-r.AnchorPoint = Vector2.new(0, 0.5)   -- Center vertically
-r.ZIndex = 100
-end
+-- Controlled by TITLE_POSITION_X at the top of this file.
+-- Moves the entire Left group (icon + title + author) together.
+task.defer(function()
+	local topbar = au.UIElements.Main.Main.Topbar
+	if TITLE_POSITION_X ~= nil then
+		topbar.Left.Position = UDim2.new(0, TITLE_POSITION_X, 0, 0)
+		topbar.Left.AnchorPoint = Vector2.new(0, 0)
+	end
+end)
 -- ===========================================================
 
 au.UIElements.Main = am("Frame", {
@@ -12303,8 +12313,6 @@ AutomaticSize="X",
 Size=UDim2.new(0,0,1,0),
 BackgroundTransparency=1,
 Name="Left",
-Position=au.Topbar.ButtonsType~="Default" and UDim2.new(0,0,0,0) or UDim2.new(0,au.UIPadding,0,0),
-AnchorPoint=Vector2.new(0,0),
 },{
 am("UIListLayout",{
 Padding=UDim.new(0, 12),
@@ -12313,12 +12321,11 @@ FillDirection="Horizontal",
 VerticalAlignment="Center",
 }),
 am("Frame",{
-AutomaticSize="Y",
+AutomaticSize="XY",
 BackgroundTransparency=1,
 Name="Title",
-Size=UDim2.new(0,200,1,0),
+Size=UDim2.new(0,0,1,0),
 LayoutOrder=2,
-ClipsDescendants=true,
 },{
 am("UIListLayout",{
 Padding=UDim.new(0,0),
@@ -12384,10 +12391,16 @@ local u=0
 local v=au.UIElements.Main.Main.Topbar.Right.UIListLayout.AbsoluteContentSize.X
 /at.WindUI.UIScale
 
-if au.Topbar.ButtonsType~="Default"then
+
+
+
+
 u=au.UIElements.Main.Main.Topbar.Left.AbsoluteSize.X/at.WindUI.UIScale
+if au.Topbar.ButtonsType~="Default"then
 u=u+v+au.UIPadding-4
 end
+
+
 
 au.UIElements.Main.Main.Topbar.Center.Position=
 UDim2.new(0,u+(au.UIPadding/at.WindUI.UIScale),0.5,0)
@@ -12396,13 +12409,14 @@ UDim2.new(1,-u-v-((au.UIPadding*2)/at.WindUI.UIScale),1,0)
 end)
 
 if au.Topbar.ButtonsType~="Default"then
-local function _anchorTitleNearGreen()
-local rightW=au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale
-au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(0,rightW+6,0,0)
-end
-al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",_anchorTitleNearGreen)
-al.AddSignal(au.UIElements.Main.Main.Topbar:GetPropertyChangedSignal"AbsoluteSize",_anchorTitleNearGreen)
-task.defer(_anchorTitleNearGreen)
+al.AddSignal(au.UIElements.Main.Main.Topbar.Right:GetPropertyChangedSignal"AbsoluteSize",function()
+au.UIElements.Main.Main.Topbar.Left.Position=UDim2.new(
+0,
+(au.UIElements.Main.Main.Topbar.Right.AbsoluteSize.X/at.WindUI.UIScale)+au.UIPadding-4,
+0,
+0
+)
+end)
 end
 
 function au.CreateTopbarButton(u,v,x,z,A,B,C,F)
