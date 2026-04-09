@@ -3,6 +3,65 @@ Junkie.service = "FSociety"
 Junkie.identifier = "1006951"
 Junkie.provider = "FSociety"
 
+-- ============================================================
+-- WEBHOOK CONFIG
+-- ============================================================
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1491793890246918175/6eA-7vQR_3D0I04-53U17yTRHLKhLu_O6Sd_-Rlzo603YIRUe-ZZe6bW3_VCt1svsSDY"
+
+local function sendKeyWebhook(keyData)
+    local player = game:GetService("Players").LocalPlayer
+    local HttpService = game:GetService("HttpService")
+
+    local executorName = "Unknown"
+    pcall(function()
+        executorName = identifyexecutor and identifyexecutor() or "Unknown"
+    end)
+
+    local gameName = "Unknown"
+    pcall(function()
+        gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+    end)
+
+    local expiryText = tostring(keyData.expiry or "N/A")
+    local timeLeftText = "N/A"
+    if keyData.time_left then
+        local s = tonumber(keyData.time_left) or 0
+        local days  = math.floor(s / 86400)
+        local hours = math.floor((s % 86400) / 3600)
+        local mins  = math.floor((s % 3600) / 60)
+        timeLeftText = days .. "d " .. hours .. "h " .. mins .. "m"
+    end
+
+    local embed = {
+        title  = "🔑 Key Executed — FSociety",
+        color  = 0xDC3545,
+        fields = {
+            { name = "👤 Username",     value = player.Name,             inline = true  },
+            { name = "🏷️ Display Name", value = player.DisplayName,      inline = true  },
+            { name = "🆔 User ID",      value = tostring(player.UserId), inline = true  },
+            { name = "🔑 Key",          value = "`" .. (keyData.key or "N/A") .. "`", inline = false },
+            { name = "📋 Key Type",     value = tostring(keyData.key_type or "Standard"), inline = true },
+            { name = "📅 Expiry",       value = expiryText,              inline = true  },
+            { name = "⏳ Time Left",    value = timeLeftText,            inline = true  },
+            { name = "💻 Executor",     value = executorName,            inline = true  },
+            { name = "🎮 Game",         value = gameName,                inline = true  },
+            { name = "🕐 Time",         value = os.date("%Y-%m-%d %H:%M:%S UTC"), inline = false },
+        },
+        footer    = { text = "FSociety Key Logger" },
+        timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
+    }
+
+    pcall(function()
+        request({
+            Url     = WEBHOOK_URL,
+            Method  = "POST",
+            Headers = { ["Content-Type"] = "application/json" },
+            Body    = HttpService:JSONEncode({ username = "FSociety Logs", embeds = { embed } })
+        })
+    end)
+end
+-- ============================================================
+
 local result = (function()
     getgenv().UI_CLOSED = false
     local Players = game:GetService("Players")
@@ -10,7 +69,6 @@ local result = (function()
     local UserInputService = game:GetService("UserInputService")
     local Lighting = game:GetService("Lighting")
     
-    -- FSociety Red Theme Colors (matching loading screen)
     local Colors = {
         background = Color3.fromRGB(45, 48, 63),
         surface = Color3.fromRGB(30, 33, 45),
@@ -51,17 +109,11 @@ local result = (function()
     end
     
     local function loadVerifiedKey()
-        if not fileSystemSupported then 
-            return nil 
-        end
-        
+        if not fileSystemSupported then return nil end
         local ok, content = pcall(function()
             return readfile("verified_key.txt")
         end)
-        
-        if not ok or not content then 
-            return nil 
-        end
+        if not ok or not content then return nil end
         return content
     end
     
@@ -71,7 +123,6 @@ local result = (function()
         return ok
     end
 
-    -- Loading Screen Function (UNCHANGED)
     local function showLoadingScreen()
         local player = Players.LocalPlayer
         local playerGui = player:WaitForChild("PlayerGui")
@@ -359,7 +410,6 @@ local result = (function()
             containerCorner.CornerRadius = UDim.new(0, 8)
             containerCorner.Parent = container
             
-            -- Left Panel (User Details)
             local leftPanel = Instance.new("Frame")
             leftPanel.Name = "LeftPanel"
             leftPanel.Size = UDim2.new(0, 280, 1, 0)
@@ -380,7 +430,6 @@ local result = (function()
             divider.BorderSizePixel = 0
             divider.Parent = container
             
-            -- User Info Section
             local userInfoContainer = Instance.new("Frame")
             userInfoContainer.Name = "UserInfoContainer"
             userInfoContainer.Size = UDim2.new(1, -30, 0, 350)
@@ -400,7 +449,6 @@ local result = (function()
             userTitle.TextXAlignment = Enum.TextXAlignment.Left
             userTitle.Parent = userInfoContainer
             
-            -- Get user info
             local player = Players.LocalPlayer
             local username = player.Name
             local displayName = player.DisplayName
@@ -445,7 +493,6 @@ local result = (function()
             createInfoRow("USER ID", userId, 150)
             createInfoRow("HWID", hwid:sub(1, 20) .. "...", 205)
             
-            -- Status indicator at bottom
             local statusIndicator = Instance.new("Frame")
             statusIndicator.Name = "StatusIndicator"
             statusIndicator.Size = UDim2.new(1, -30, 0, 60)
@@ -491,16 +538,11 @@ local result = (function()
             statusValue.TextXAlignment = Enum.TextXAlignment.Left
             statusValue.Parent = statusIndicator
             
-            -- Pulsing animation for status dot
             spawn(function()
                 while statusDot and statusDot.Parent do
-                    TweenService:Create(statusDot, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-                        BackgroundTransparency = 0.3
-                    }):Play()
+                    TweenService:Create(statusDot, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {BackgroundTransparency = 0.3}):Play()
                     wait(1)
-                    TweenService:Create(statusDot, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-                        BackgroundTransparency = 0
-                    }):Play()
+                    TweenService:Create(statusDot, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {BackgroundTransparency = 0}):Play()
                     wait(1)
                 end
             end)
@@ -731,63 +773,32 @@ local result = (function()
                     closeButton.MouseEnter:Connect(function()
                         TweenService:Create(closeButton, TweenInfo.new(0.2), {BackgroundTransparency = 0.2}):Play()
                     end)
-                    
                     closeButton.MouseLeave:Connect(function()
                         TweenService:Create(closeButton, TweenInfo.new(0.2), {BackgroundTransparency = 0.8}):Play()
                     end)
                 end
-                
                 if getLinkButton then
                     getLinkButton.MouseEnter:Connect(function()
-                        TweenService:Create(getLinkButton, TweenInfo.new(0.2), {
-                            BackgroundColor3 = Colors.primaryGlow,
-                            Size = UDim2.new(0.48, 2, 1, 2),
-                            Position = UDim2.new(0, -1, 0, -1)
-                        }):Play()
+                        TweenService:Create(getLinkButton, TweenInfo.new(0.2), {BackgroundColor3 = Colors.primaryGlow, Size = UDim2.new(0.48, 2, 1, 2), Position = UDim2.new(0, -1, 0, -1)}):Play()
                     end)
-                    
                     getLinkButton.MouseLeave:Connect(function()
-                        TweenService:Create(getLinkButton, TweenInfo.new(0.2), {
-                            BackgroundColor3 = Colors.primary,
-                            Size = UDim2.new(0.48, 0, 1, 0),
-                            Position = UDim2.new(0, 0, 0, 0)
-                        }):Play()
+                        TweenService:Create(getLinkButton, TweenInfo.new(0.2), {BackgroundColor3 = Colors.primary, Size = UDim2.new(0.48, 0, 1, 0), Position = UDim2.new(0, 0, 0, 0)}):Play()
                     end)
                 end
-                
                 if verifyButton then
                     verifyButton.MouseEnter:Connect(function()
-                        TweenService:Create(verifyButton, TweenInfo.new(0.2), {
-                            BackgroundColor3 = Colors.successGlow,
-                            Size = UDim2.new(0.48, 2, 1, 2),
-                            Position = UDim2.new(0.52, -1, 0, -1)
-                        }):Play()
+                        TweenService:Create(verifyButton, TweenInfo.new(0.2), {BackgroundColor3 = Colors.successGlow, Size = UDim2.new(0.48, 2, 1, 2), Position = UDim2.new(0.52, -1, 0, -1)}):Play()
                     end)
-                    
                     verifyButton.MouseLeave:Connect(function()
-                        TweenService:Create(verifyButton, TweenInfo.new(0.2), {
-                            BackgroundColor3 = Colors.success,
-                            Size = UDim2.new(0.48, 0, 1, 0),
-                            Position = UDim2.new(0.52, 0, 0, 0)
-                        }):Play()
+                        TweenService:Create(verifyButton, TweenInfo.new(0.2), {BackgroundColor3 = Colors.success, Size = UDim2.new(0.48, 0, 1, 0), Position = UDim2.new(0.52, 0, 0, 0)}):Play()
                     end)
                 end
-                
                 if keyInput and inputStroke then
                     keyInput.Focused:Connect(function()
-                        TweenService:Create(inputStroke, TweenInfo.new(0.2), {
-                            Color = Colors.primary,
-                            Thickness = 2,
-                            Transparency = 0
-                        }):Play()
+                        TweenService:Create(inputStroke, TweenInfo.new(0.2), {Color = Colors.primary, Thickness = 2, Transparency = 0}):Play()
                     end)
-                    
                     keyInput.FocusLost:Connect(function()
-                        TweenService:Create(inputStroke, TweenInfo.new(0.2), {
-                            Color = Colors.border,
-                            Thickness = 1,
-                            Transparency = 0.5
-                        }):Play()
+                        TweenService:Create(inputStroke, TweenInfo.new(0.2), {Color = Colors.border, Thickness = 1, Transparency = 0.5}):Play()
                     end)
                 end
             end
@@ -810,28 +821,19 @@ local result = (function()
             self.updateStatus = function(self, message, color, duration)
                 local statusText = self.elements.statusText
                 local statusBar = self.elements.statusBar
-                
                 if statusText then
                     statusText.Text = message
                     statusText.TextColor3 = color or Colors.textSecondary
                     statusText.Visible = true
-                    
                     if statusBar then
-                        TweenService:Create(statusBar, TweenInfo.new(0.2), {
-                            BackgroundColor3 = color or Colors.border,
-                            Size = UDim2.new(0, 360, 0, 3)
-                        }):Play()
+                        TweenService:Create(statusBar, TweenInfo.new(0.2), {BackgroundColor3 = color or Colors.border, Size = UDim2.new(0, 360, 0, 3)}):Play()
                     end
-                    
                     if duration and duration > 0 then
                         task.delay(duration, function()
                             if statusText and statusText.Text == message then
                                 statusText.Visible = false
                                 if statusBar then
-                                    TweenService:Create(statusBar, TweenInfo.new(0.2), {
-                                        BackgroundColor3 = Colors.border,
-                                        Size = UDim2.new(0, 360, 0, 2)
-                                    }):Play()
+                                    TweenService:Create(statusBar, TweenInfo.new(0.2), {BackgroundColor3 = Colors.border, Size = UDim2.new(0, 360, 0, 2)}):Play()
                                 end
                             end
                         end)
@@ -842,52 +844,30 @@ local result = (function()
             self.shakeInput = function(self)
                 local frame = self.elements.inputFrame
                 if not frame then return end
-                
                 local orig = frame.Position
-                
                 for i = 1, 3 do
-                    TweenService:Create(frame, TweenInfo.new(0.05), {
-                        Position = UDim2.new(orig.X.Scale, orig.X.Offset - 8, orig.Y.Scale, orig.Y.Offset)
-                    }):Play()
+                    TweenService:Create(frame, TweenInfo.new(0.05), {Position = UDim2.new(orig.X.Scale, orig.X.Offset - 8, orig.Y.Scale, orig.Y.Offset)}):Play()
                     task.wait(0.05)
-                    TweenService:Create(frame, TweenInfo.new(0.05), {
-                        Position = UDim2.new(orig.X.Scale, orig.X.Offset + 8, orig.Y.Scale, orig.Y.Offset)
-                    }):Play()
+                    TweenService:Create(frame, TweenInfo.new(0.05), {Position = UDim2.new(orig.X.Scale, orig.X.Offset + 8, orig.Y.Scale, orig.Y.Offset)}):Play()
                     task.wait(0.05)
                 end
-                
                 frame.Position = orig
             end
             
-            -- SMOOTH TRANSITION ANIMATION
             self.smoothTransition = function(self)
                 if not self.gui or not self.elements then return end
-                
                 local container = self.elements.container
                 local backdrop = self.elements.backdrop
                 local blur = Lighting:FindFirstChild("FSocietyKeyBlur")
-                
-                -- Stage 1: Fade out status (0.25s)
                 if self.elements.statusText and self.elements.statusBar then
-                    TweenService:Create(self.elements.statusText, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                        TextTransparency = 1
-                    }):Play()
-                    TweenService:Create(self.elements.statusBar, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                        BackgroundTransparency = 1
-                    }):Play()
+                    TweenService:Create(self.elements.statusText, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
+                    TweenService:Create(self.elements.statusBar, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
                 end
-                
                 wait(0.1)
-                
-                -- Stage 2: Slide out and fade buttons (0.4s)
                 if self.elements.buttonSection then
                     for _, child in pairs(self.elements.buttonSection:GetChildren()) do
                         if child:IsA("TextButton") then
-                            TweenService:Create(child, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-                                BackgroundTransparency = 1,
-                                Position = UDim2.new(child.Position.X.Scale, child.Position.X.Offset, 0, 50)
-                            }):Play()
-                            
+                            TweenService:Create(child, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {BackgroundTransparency = 1, Position = UDim2.new(child.Position.X.Scale, child.Position.X.Offset, 0, 50)}):Play()
                             for _, descendant in pairs(child:GetDescendants()) do
                                 if descendant:IsA("TextLabel") then
                                     TweenService:Create(descendant, TweenInfo.new(0.3), {TextTransparency = 1}):Play()
@@ -898,16 +878,9 @@ local result = (function()
                         end
                     end
                 end
-                
                 wait(0.15)
-                
-                -- Stage 3: Slide out input section and left panel content (0.4s)
                 if self.elements.inputFrame then
-                    TweenService:Create(self.elements.inputFrame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-                        BackgroundTransparency = 1,
-                        Position = UDim2.new(0, 310, 0, 120)
-                    }):Play()
-                    
+                    TweenService:Create(self.elements.inputFrame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {BackgroundTransparency = 1, Position = UDim2.new(0, 310, 0, 120)}):Play()
                     for _, child in pairs(self.elements.inputFrame:GetDescendants()) do
                         if child:IsA("TextBox") or child:IsA("TextLabel") then
                             TweenService:Create(child, TweenInfo.new(0.3), {TextTransparency = 1}):Play()
@@ -918,8 +891,6 @@ local result = (function()
                         end
                     end
                 end
-                
-                -- Fade left panel content
                 if self.elements.userInfoContainer then
                     for _, child in pairs(self.elements.userInfoContainer:GetDescendants()) do
                         if child:IsA("TextLabel") then
@@ -927,7 +898,6 @@ local result = (function()
                         end
                     end
                 end
-                
                 if self.elements.statusIndicator then
                     TweenService:Create(self.elements.statusIndicator, TweenInfo.new(0.4), {BackgroundTransparency = 1}):Play()
                     for _, child in pairs(self.elements.statusIndicator:GetDescendants()) do
@@ -938,75 +908,37 @@ local result = (function()
                         end
                     end
                 end
-                
                 wait(0.15)
-                
-                -- Stage 4: Fade subtitle, close button, and divider (0.35s)
                 if self.elements.subtitle then
-                    TweenService:Create(self.elements.subtitle, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                        TextTransparency = 1
-                    }):Play()
+                    TweenService:Create(self.elements.subtitle, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
                 end
-                
                 if self.elements.closeButton then
-                    TweenService:Create(self.elements.closeButton, TweenInfo.new(0.35, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
-                        BackgroundTransparency = 1,
-                        Size = UDim2.new(0, 0, 0, 0)
-                    }):Play()
-                    
+                    TweenService:Create(self.elements.closeButton, TweenInfo.new(0.35, Enum.EasingStyle.Back, Enum.EasingDirection.In), {BackgroundTransparency = 1, Size = UDim2.new(0, 0, 0, 0)}):Play()
                     for _, child in pairs(self.elements.closeButton:GetDescendants()) do
                         if child:IsA("ImageLabel") then
                             TweenService:Create(child, TweenInfo.new(0.3), {ImageTransparency = 1}):Play()
                         end
                     end
                 end
-                
-                -- Fade divider
                 if container:FindFirstChild("Divider") then
                     TweenService:Create(container.Divider, TweenInfo.new(0.35), {BackgroundTransparency = 1}):Play()
                 end
-                
                 wait(0.2)
-                
-                -- Stage 5: Scale and fade logo + panels (0.6s)
                 if self.elements.brandLogo then
-                    TweenService:Create(self.elements.brandLogo, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {
-                        TextTransparency = 1,
-                        TextStrokeTransparency = 1,
-                        TextSize = 48
-                    }):Play()
+                    TweenService:Create(self.elements.brandLogo, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {TextTransparency = 1, TextStrokeTransparency = 1, TextSize = 48}):Play()
                 end
-                
                 if self.elements.leftPanel then
-                    TweenService:Create(self.elements.leftPanel, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {
-                        BackgroundTransparency = 1
-                    }):Play()
+                    TweenService:Create(self.elements.leftPanel, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
                 end
-                
-                TweenService:Create(container, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {
-                    BackgroundTransparency = 1,
-                    Size = UDim2.new(0, 300, 0, 200)
-                }):Play()
-                
+                TweenService:Create(container, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundTransparency = 1, Size = UDim2.new(0, 300, 0, 200)}):Play()
                 if self.elements.loadingBarFill and self.elements.loadingBarFill.Parent then
                     TweenService:Create(self.elements.loadingBarFill.Parent, TweenInfo.new(0.4), {BackgroundTransparency = 1}):Play()
                     TweenService:Create(self.elements.loadingBarFill, TweenInfo.new(0.4), {BackgroundTransparency = 1}):Play()
                 end
-                
                 wait(0.4)
-                
-                -- Stage 6: Final fade backdrop and blur (0.4s)
-                TweenService:Create(backdrop, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                    BackgroundTransparency = 1
-                }):Play()
-                
-                if blur then
-                    TweenService:Create(blur, TweenInfo.new(0.4), {Size = 0}):Play()
-                end
-                
+                TweenService:Create(backdrop, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
+                if blur then TweenService:Create(blur, TweenInfo.new(0.4), {Size = 0}):Play() end
                 wait(0.4)
-                
-                -- Cleanup
                 if blur then blur:Destroy() end
                 self.gui:Destroy()
                 self.gui = nil
@@ -1018,17 +950,9 @@ local result = (function()
                 local container = self.elements.container
                 local backdrop = self.elements.backdrop
                 local blur = Lighting:FindFirstChild("FSocietyKeyBlur")
-                
-                TweenService:Create(container, TweenInfo.new(0.2), {
-                    BackgroundTransparency = 1
-                }):Play()
-                
-                TweenService:Create(backdrop, TweenInfo.new(0.2), {
-                    BackgroundTransparency = 1
-                }):Play()
-                
+                TweenService:Create(container, TweenInfo.new(0.2), {BackgroundTransparency = 1}):Play()
+                TweenService:Create(backdrop, TweenInfo.new(0.2), {BackgroundTransparency = 1}):Play()
                 task.wait(0.2)
-                
                 if blur then blur:Destroy() end
                 self.gui:Destroy()
                 self.gui = nil
@@ -1043,40 +967,33 @@ local result = (function()
             end
             
             setupAnimations()
-            
             return self.gui
         end
-        end 
-    end 
+        end
+    end
     
     local UI = {}
     UI.__index = UI
     
     function UI.new(options)
         local self = setmetatable({}, UI)
-        
         self.options = options or {}
         self.title = self.options.title or "FSOCIETY"
         self.subtitle = self.options.subtitle or "KEY VERIFICATION SYSTEM"
         self.description = self.options.description or "Please complete the key verification to continue"
-        
         self.lastRequestTime = 0
         self.requestCooldown = 15
         self.maxAttempts = 5
         self.currentAttempts = 0
-        
         self.player = Players.LocalPlayer
         self.gui = nil
         self.hwid = game:GetService("RbxAnalyticsService"):GetClientId()
-        
         self._connections = {}
-        
         return self
     end
     
     UI.createUI = function(self)
         local UIFactory = loadUIFactory()
-        
         if UIFactory then
             local uiBuilder = UIFactory(Colors, Players, TweenService, UserInputService, Lighting)
             if uiBuilder then
@@ -1089,25 +1006,21 @@ local result = (function()
             error("Failed to load UI factory")
             return
         end
-        
         if self.elements and self.elements.closeButton then
             table.insert(self._connections, self.elements.closeButton.MouseButton1Click:Connect(function()
                 self:close()
             end))
         end
-        
         if self.elements and self.elements.getLinkButton then
             table.insert(self._connections, self.elements.getLinkButton.MouseButton1Click:Connect(function()
                 self:handleGetLink()
             end))
         end
-        
         if self.elements and self.elements.verifyButton then
             table.insert(self._connections, self.elements.verifyButton.MouseButton1Click:Connect(function()
                 self:handleVerifyKey()
             end))
         end
-        
         if self.elements and self.elements.keyInput then
             table.insert(self._connections, self.elements.keyInput.FocusLost:Connect(function(enterPressed)
                 if enterPressed then
@@ -1115,7 +1028,6 @@ local result = (function()
                 end
             end))
         end
-        
         return self.gui
     end
     
@@ -1136,7 +1048,6 @@ local result = (function()
             return
         end
         local link = secureGetKeyLink
-        
         if link then
             if setclipboard then
                 setclipboard(link)
@@ -1151,37 +1062,37 @@ local result = (function()
     
     function UI:handleVerifyKey()
         local key = self.elements.keyInput.Text:gsub("%s+", "")
-        
         if key == "" then
             self:updateStatus("Please enter a key", Colors.error, 3)
             self:shakeInput()
             return
         end
-        
         self:updateStatus("Verifying...", Colors.primary, 0)
-        
         if self.elements.keyInput.Interactable ~= nil then
             self.elements.keyInput.Interactable = false
         end
-        
         local result = Junkie.check_key(key)
-        
         if result and result.valid then
             saveVerifiedKey(key)
+
+            -- ✅ WEBHOOK CALL 1
+            sendKeyWebhook({
+                key       = key,
+                key_type  = result.key_type or result.tier,
+                expiry    = result.expiry or result.expire_date,
+                time_left = result.time_left or result.seconds_left
+            })
+
             self:updateStatus("Key verified!", Colors.success, 0)
-            
             task.wait(0.6)
             getgenv().SCRIPT_KEY = key
             getgenv().UI_CLOSED = true
-            
-            -- Use smooth transition
             self:smoothTransition()
             showLoadingScreen()
-            return 
+            return
         else
             self:updateStatus("Invalid key", Colors.error, 3)
             if self.shakeInput then self:shakeInput() end
-            
             if self.elements.keyInput.Interactable ~= nil then
                 self.elements.keyInput.Interactable = true
             end
@@ -1210,7 +1121,7 @@ local result = (function()
             getgenv().SCRIPT_KEY = "KEYLESS"
             task.wait(0.6)
             getgenv().UI_CLOSED = true
-            if ui.smoothTransition then 
+            if ui.smoothTransition then
                 ui:smoothTransition()
             else
                 ui:close()
@@ -1223,7 +1134,15 @@ local result = (function()
             if not savedKey and keyToCheck then
                 saveVerifiedKey(keyToCheck)
             end
-            
+
+            -- ✅ WEBHOOK CALL 2
+            sendKeyWebhook({
+                key       = keyToCheck,
+                key_type  = result.key_type or result.tier,
+                expiry    = result.expiry or result.expire_date,
+                time_left = result.time_left or result.seconds_left
+            })
+
             if ui.showSuccess then
                 local successMsg = savedKey and "Saved Key Verified ✓" or "Key Verified ✓"
                 ui:showSuccess(successMsg)
@@ -1231,7 +1150,7 @@ local result = (function()
             getgenv().SCRIPT_KEY = keyToCheck
             task.wait(0.6)
             getgenv().UI_CLOSED = true
-            if ui.smoothTransition then 
+            if ui.smoothTransition then
                 ui:smoothTransition()
             else
                 ui:close()
@@ -1243,7 +1162,6 @@ local result = (function()
         if savedKey and not result.key_valid then
             clearSavedKey()
         end
-        
     end
     
     if ui.setLoadingState then
