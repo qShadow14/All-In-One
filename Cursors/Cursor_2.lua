@@ -9,7 +9,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 --           CURSOR SETTINGS (Edit Here)
 -- =============================================
 
-local CURSOR_IMAGE = "rbxassetid://101411481927290"
+local CURSOR_IMAGE = "rbxassetid://114962148865656"
 local CURSOR_SIZE  = 20
 
 local COLOR_MODE = "static"
