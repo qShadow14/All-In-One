@@ -128,7 +128,7 @@ elseif game.PlaceId == 6918802178 then
     Tab:Button({Title = "Teleport GUI", Callback = function() loadstring(game:HttpGet("https://pastefy.app/a1xgANtg/raw"))() end})
 
 -- 7. Blox Fruit
-elseif game.PlaceId == 2753915549 then
+elseif game.GameId == 994732206 or game.PlaceId == 100117331123089 then
     local Tab = Window:Tab({
         Title = "[7] Blox Fruit",
         Desc = "Scripts for Blox Fruit",
